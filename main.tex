@@ -156,10 +156,7 @@ We suggest that digital dataset collection practices have some analogies to well
 % use to correct figure counter if necessary
 %\renewcommand{\thefigure}{2}
 
-\includegraphics[width=\textwidth]{fig1a.png}
-a) Physical Specimen Collection
-\includegraphics[width=\textwidth]{fig1b.png}
-b) Digital Data Collection
+\includegraphics[width=\textwidth]{fig1.png}
 
 \caption{Reliable record keeping for digital datasets (b) can be achieved in an analogous way to current practices in record keeping for physical specimens (a). Biologists collect physical specimens from the natural world, thoroughly document the process, then store the specimens in facilities equipped for long-term preservation. Analogously, digital datasets that are downloaded from the internet can be thoroughly documented and archived in dedicated repositories for long-term preservation. Just as the collection of physical specimens is recorded and identified in specimen history records, the downloading of digital datasets can also be recorded and identified in dataset history records.}
 
@@ -184,73 +181,69 @@ Now that we have outlined a method for observing and documenting the behavior of
 
 The Preston software developed by Poelen et al. (Poelen 2019) implements mechanisms for monitoring data networks as we have described. It allows users to deploy a data network observatory which systematically observes the entire set of URLs registered by the network, queries each URL for data, then documents data collection and archives the results. All crawl activities, the queries they issue, and the results they produce are meticulously recorded in a string of provenance logs.
 
-We deployed several Preston observatories which periodically queried the registered dataset URLs listed by Biodiversity Heritage Library (BHL), Data Observation Network for Earth (DataONE), Global Biodiversity Information Facility (GBIF), and Integrated Digitized Bio Collections (iDigBio). Each of these networks provides online registries of URLs that locate the data in the network. The registered URLs for DataONE, GBIF, and iDigBio were queried monthly from March 2019 through October 2019. BHL was queried monthly from May 2019 through October 2019. The logs taken by each of these observatories describe the URL queries and their results, which were processed to produce the results that follow. A 
-(a) BHL
+We deployed several Preston observatories which periodically queried the registered dataset URLs listed by Biodiversity Heritage Library (BHL), Data Observation Network for Earth (DataONE), Global Biodiversity Information Facility (GBIF), and Integrated Digitized Bio Collections (iDigBio). Each of these networks provides online registries of URLs that locate the data in the network. The registered URLs for DataONE, GBIF, and iDigBio were queried monthly from March 2019 through October 2019. BHL was queried monthly from May 2019 through October 2019. The logs taken by each of these observatories describe the URL queries and their results, which were processed to produce the results that follow. A sixth observatory was constructed by aggregating the queries of the five data network observatories.
 
-(b) DataONE
+\begin{figure}[ht] %s state preferences regarding figure placement here
 
-(c) GBIF
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
 
-(d) iDigBio
+\includegraphics[width=\textwidth]{fig2.png}
 
- 
-Figure 2. Overall responsiveness, stability, and reliability from March 2019 to October 2019 as a percentage of URLs that exhibit each indicator in a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
+\caption{Overall responsiveness, stability, and reliability from March 2019 to October 2019 as a percentage of URLs that exhibit each indicator in a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
+}
 
-sixth observatory was constructed by aggregating the queries of the five data network observatories.
+\label{fig2} % \label works only AFTER \caption within figure environment
+
+\end{figure}
+
+
 \section*{Results}
 
 Breakdowns of the overall reliabilities of the data networks are provided in Table 1. Results are listed as percentages and total counts of URLs in the data network that were assigned each reliability indicator. When analyzing the recorded results of queries to URLs in each data network over a period of seven months, we found that, for each individual network, 5\%-44\% of registered URLs were intermittently or consistently unresponsive, 0\%-64\% produced unstable content, and 13\%-76\% became either unresponsive or unstable over the period of observation.
 
 Overall, 30\% of URLs observed across the five networks became unreliable at some point over the period of March 2019 through October 2019. Of those unreliable URLs, 48\% were unstable, 22\% became consistently unresponsive, and 70\% were at best only intermittently responsive. For 5\% of successful queries, the URL failed to respond to the next query. For 4\% of successful queries, the URL provided different content the next time it responded when queried.
 
-The changes in reliability over time for each network are visualized in figure 2. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the 
+The changes in reliability over time for each network are visualized in figure 2. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the smallest fraction of URLs in table 1 and figure 2. Figure 3 visualizes the cumulative growth of biodiversity data networks during their periods of observation. This growth is illustrated with two metrics: the total number of unique URLs ever registered by each network and the total number of unique contents that had been downloaded from the network at each sampled point in time.
 
+\begin{figure}[ht] %s state preferences regarding figure placement here
 
-(a) BHL
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
 
-(b) DataONE
+\includegraphics[width=\textwidth]{fig3.png}
 
-(c) GBIF
+\caption{
+Total number of URLs and unique contents observed from March 2019 to October 2019 for a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
+}
 
-(d) iDigBio
+\label{fig3} % \label works only AFTER \caption within figure environment
 
+\end{figure}
 
-Figure 3. Total number of URLs and unique contents observed from March 2019 to October 2019 for
-a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
+The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between data networks. 
 
-smallest fraction of URLs in table 1 and figure 2. Figure 3 visualizes the cumulative growth of biodiversity data networks during their periods of observation. This growth is illustrated with two metrics: the total number of unique URLs ever registered by each network and the total number of unique contents that had been downloaded from the network at each sampled point in time.
+\begin{table}[!ht]
+\begin{adjustwidth}{-1.5in}{0in} % comment out/remove adjustwidth environment if table fits in text column.
+\centering
+\caption{Overall responsiveness, stability, and reliability for URLs observed in each biodiversity data network and for all observed URLs as of October 2019.
+}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+{\bf Data Network} & {\bf Responsive URLs} & {\bf Stable URLs*} & {\bf Reliable URLs} \\ \hline
+BHL & 57.41\% (142,672) & 99.97\% (232,996) & 57.39\% (142,633) \\ \hline
+DataONE & 94.55\% (352,438) & 92.27\% (339,109) & 87.09\% (324,641) \\ \hline
+GBIF & 71.72\% (49,707) & 37.35\% (20,094) & 24.05\% (16,669) \\ \hline
+iDigBio & 88.04\% (5,477) & 68.69\% (4,251) & 61.68\% (3,837)  \\ \hline
+All observed URLs & 78.94\% (546,645) & 90.43\% (593,469) & 70.07\% (485,203) \\ \hline
+\end{tabular}
+\label{tab1}
+\end{adjustwidth}
+\end{table}
 
-The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between data networks. Some reasons for these differences can be inferred when cross-examining the
-
-
-Table 1. Overall responsiveness, stability, and reliability for URLs observed in each biodiversity data network and for all observed URLs as of October 2019.
-Data Network
-Responsive URLs
-Stable URLs*
-Reliable URLs
-BHL
-57.41\% (142,672)
-99.97\% (232,996)
-57.39\% (142,633)
-DataONE
-94.55\% (352,438)
-92.27\% (339,109)
-87.09\% (324,641)
-GBIF
-71.72\% (49,707)
-37.35\% (20,094)
-24.05\% (16,669)
-iDigBio
-88.04\% (5,477)
-68.69\% (4,251)
-61.68\% (3,837)
-All observed URLs
-78.94\% (546,645)
-90.43\% (593,469)
-70.07\% (485,203)
 *URLs that never provided content were omitted from the divisor when calculating Stable URLs percentages.
 
-table and figures. For example, although BHL scored relatively low in responsiveness due to frequent link rot, the content that it does provide is more stable than all other networks because content drift within BHL is relatively rare. Conversely, although iDigBio is relatively responsive, it has low stability because the network’s near-constant content growth far outpaces its URL growth. GBIF’s behavior was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October. Even the most reliable network, DataONE, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of just seven months. Additionally, DataONE’s growth curves indicate that there are far fewer unique contents than unique URLs; this evokes two possibilities: either much of DataONE’s URL population is unresponsive, or DataONE lists multiple URLs for many of its datasets. Because DataONE has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It’s also worth noting that the June and September spikes in BHL’s unresponsiveness were largely due to URLs that failed to respond in those particular months but actually did respond to future queries.
+Some reasons for these differences can be inferred when cross-examining the table and figures. For example, although BHL scored relatively low in responsiveness due to frequent link rot, the content that it does provide is more stable than all other networks because content drift within BHL is relatively rare. Conversely, although iDigBio is relatively responsive, it has low stability because the network’s near-constant content growth far outpaces its URL growth. GBIF’s behavior was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October. Even the most reliable network, DataONE, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of just seven months. Additionally, DataONE’s growth curves indicate that there are far fewer unique contents than unique URLs; this evokes two possibilities: either much of DataONE’s URL population is unresponsive, or DataONE lists multiple URLs for many of its datasets. Because DataONE has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It’s also worth noting that the June and September spikes in BHL’s unresponsiveness were largely due to URLs that failed to respond in those particular months but actually did respond to future queries.
 
 \subsection*{Sources of Potential Numerical Error}
 We expect that the URL reliability counts generated for the figures and tables are lower than their actual values. When we qualified URLs as being reliable, responsive, and stable, we could not be certain that links did not briefly become unresponsive or change content during the month-long periods between queries. It is therefore likely that some cases of link rot and content drift were not reflected in the results. Additionally, we only query URLs that the data networks list in their dataset registries; this means that, after URL was removed from a network’s registry, we could not detect subsequent instances of reference rot. Therefore, our results represent a very optimistic upper bound on URL and network reliabilities.
@@ -263,6 +256,8 @@ In an effort to minimize artificial link rot due to internet access issues in ou
 
 We have shown that the reliability of URLs decreases over time in all of the major biodiversity data networks that we monitored. If current trends continue, the extent of reference rot will only worsen. Systematic changes in the way we preserve and reference data are needed to reverse these trends and improve the longevity and long-term integrity of the biodiversity data record. Before we propose such changes, it’s necessary to first understand why URLs are proving to be ill-suited for referencing data in the long term.
 
+
+
 \subsection*{Unreliability of Location-based Identifiers}
 
 The problems related to using URLs for referencing datasets are largely due to the fact that they are location-based identifiers; they describe where the data is but not necessarily what it is. Also, by definition, data accessed via URLs must be mediated by a central authority, such as the institutional repositories that serve biodiversity datasets, who can match location-based identifiers with data. Interested users are expected to trust the central authority to guarantee long-term access to the referenced data in its original form.
@@ -272,6 +267,26 @@ The use of URLs as identifiers violates the requirements of uniqueness and persi
 At the core of URL instability is the current practice of using URLs to identify evolving datasets rather than fixed dataset versions. If biodiversity data providers were uniformly committed to allocating one URL per dataset version, then content drift might indeed become far less common, improving overall URL stability; however, widespread social adoption of such a commitment from all data providers may be unrealistic. Additionally, such a commitment would not address link rot and URL unresponsiveness. Even if a similar commitment were made by data providers to guarantee the long-term responsiveness of URLs, it could not address the case where a data provider either loses authority over a domain name or migrates to another. For example, our deployed Preston observatories recorded the sudden migration of over 14,000 Plazi datasets from the http://plazi.cs.umb.edu/ domain to http://tb.plazi.org/, an event which invalidated any references to URLs within the first domain.
 
 Paskin proposed that “the best way to ‘future proof’ an identifier scheme is to forego any intelligence within the identifier itself” (Paskin 1998), where the notion of intelligence refers to the inclusion of meaningful information in the textual representation of the identifier. URLs are structured according to the Domain Name System specification and inherently contain some minimum amount of intelligence: the domain that the URL belongs to (IETF 1987). Thus, it is necessary to look to another identification scheme to allow for proper identification and reliable referencing.
+
+An Alternative: Unique Content-Based Identifiers
+Instead of identifying digital datasets by location (i.e. URL), we can identify datasets by their content. One way to achieve this is to use algorithmically generated content-based identifiers. A variety of cryptographic hashing algorithms are available which guarantee a single unique hash, representable as text, for any given dataset (NIST 2001). Because the hash itself is deterministically derived from the content it identifies, we say that it is a content-based identifier. Because hashes are deterministic, anyone interested in identifying a dataset can simply compute its hash without the need for some mediating central authority (Paskin 1998). If a change is made to the dataset, then the hash computed from the modified dataset will be different from that of the original. Therefore, if the hash of a dataset is the same as the referenced hash, it must be the originally referenced dataset (NIST 2001).
+Because hash identifiers can only identify the exact content that was referenced, content drift is impossible; a content hash will never match with either a different version of the content any other content. Additionally, the chance of link rot is diminished due to the lack of a single point of failure in the form of a central authority that is solely responsible for making content available. The shift from location-based to content-based identifiers allows for the decoupling of future dataset accessibility from the original point of access. As long as there exists some well-known and accessible data repository that has archived the desired content, it can always be retrieved. Even if one repository becomes inaccessible, another may be available to retrieve the content. If a repository changes location, the reference is still reliable; it is the interested user’s responsibility to find either the repository’s new location or another repository that hosts the desired dataset. Additionally, it is worth noting that duplication of content across different information platforms does not lead to ambiguous references, but rather to distributed copies of the same reliably addressed content. Figure 4 demonstrates the differences in referenced dataset retrieval when using location- versus content-based identifiers.
+
+\begin{figure}[ht] %s state preferences regarding figure placement here
+
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
+
+\includegraphics[width=\textwidth]{fig4.png}
+
+\caption{Visualization of content resolution for location- versus content-based identifiers. 1) URLs point to a known location of a dataset, but do not guarantee either the presence or authenticity of the retrieved dataset; 2) the use of a DOI that resolves to a URL adds a layer of redirection; 3) A content-addressed dataset can be found by matching against recomputed hashes of available datasets in an archive; 4) well-known (online) hash indices can be used to facilitate discovery of dataset locations associated with a specific content hash.
+}
+
+\label{fig4} % \label works only AFTER \caption within figure environment
+
+\end{figure}
+
+
 
 \subsection*{Transitioning to Reliable References}
 

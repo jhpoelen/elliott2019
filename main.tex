@@ -74,7 +74,7 @@
 % title goes here:
 \begin{flushleft}
 {\Large
-\textbf\newline{\LaTeX Template for Manuscripts with Embedded Figures.}
+\textbf\newline{\Toward Reliable Biodiversity Data References}
 }
 \newline
 % authors go here:
@@ -93,71 +93,62 @@ Author 7\textsuperscript{1,*}
 \bf{2} Affiliation B
 \\
 \bigskip
-* correseponding@author.mail
+* corresponding@author.mail
 
 \end{flushleft}
-
-\section*{Abstract}
-Fitting multiple figures into very tight manuscripts while keeping it pleasant to read is challenging. Therefore figures are often simply attached to the very end of a manuscript file. While easier for the authors, this practice is inconvenient for readers. This \LaTeX template shows how to generate a compiled PDF with figures embedded into the text. It provides several examples of how to embed figures or tables directly into the text thus giving you a range of options from which you should choose the one best suited for your manuscript. Check out Schlegel et al., (2016) as example of use \cite{Schlegel2016}.
 
 % now start line numbers
 \linenumbers
 
-% the * after section prevents numbering
+%\clearpage makes sure that all above content is printed at this point and does not invade into the upcoming content
+%\clearpage
+
+\section*{Abstract}
+Scientific discovery increasingly relies on digital datasets to capture measurements and outcomes. However, no systematic approach has been adopted to reliably reference and provide access to our digital datasets. Our existing data infrastructures have grown accustomed to using location-based identifiers such as URLs in an attempt to retain our digital knowledge. We hypothesize that URLs are not sufficient to ensure long-term data access, then propose a method for evaluating long-term URL reliability.
+
+After taking periodic inventories from March through October 2019 of the data served by major biodiversity aggregators, including GBIF, iDigBio, DataONE, and BHL, we found that, for each network, 5\%-44\% of registered URLs were intermittently or consistently unresponsive, 0\%-64\% produced unstable content, and 13\%-76\% became either unresponsive or unstable over the period of observation. We propose to use content-based identifiers to reliably track and reference datasets while enabling decentralized archiving schemes. We propose a method for properly tracking and archiving datasets that can be used to guarantee fixed content and encourage long-term accessibility by leveraging content- rather than location-based identifiers.
+
+Key words:
+Biodiversity, Ecological Informatics, Information Systems, Information Retrieval
+
 \section*{Introduction}
-In the introduction you will see an example of text wrapping around the figure with a figure caption on the margin (Fig. \ref{fig1}). This is done by combining the \verb!wrapfigure! with % avoid blank space here 
-\marginpar{
-\vspace{.7cm} % adjust vertical position relative to text with \vspace{} - note that you can enter negative numbers to move margin caption up
-\color{Gray} % this gives caption a grey color to set it apart from text body
-\textbf{Figure \ref{fig1}. Example of a margin caption.} % note that \ref{fig1} refers to the corresponding wrapfigure
-Setting up your figure + caption like this looks fancy and does not disrupt the flow of the text. But it requires more manual adjustments (position, spacing, labeling) compared to using standard \LaTeX figure environments.
-}
-\begin{wrapfigure}[19]{l}{75mm}
-% the number in [] of wrapfigure is optional and gives the number of text lines that should be wrapped around the text. Adjust according to your figures height
-\includegraphics[width=75mm]{fig1.pdf}
-\captionsetup{labelformat=empty} % makes sure dummy caption is blank
-\caption{} % add dummy caption - otherwise \label won't work and figure numbering will not count up
-\label{fig1} % use \ref{fig1} to reference to this figure
-\end{wrapfigure} % avoid blank space here
-the \verb!marginnote! environment. Please note that in this case the figure (\verb!wrapfigure!) and the figure caption (\verb!marginpar!) have to be separated as you can tell from the code. The \verb!wrapfigure! environment can be a bit tricky when it comes to text formatting. Thus some general hints: (a) try to avoid line breaks in the code as this may result in weird formatting around the figure, (b) the figure should not span multiple headlines (sections) and (c) if you encounter problems with the line break right after the \verb!wrapfigure! try using \verb!\mbox{}! to prevent premature line breaks (\mbox{see example in code}). As stated in the figure caption, setting up figures this way requires a bit more manual adjustments but it makes figures blend in nicely without interrupting flow of text.
+Over the course of hundreds of years, naturalists and biologists have systematically collected physical evidence from an ever-changing natural world. Through well-established protocols and institutional support, many of these natural history collections have withstood the ravages of time (Hortal et al. 2015, Davis et al. 1996). Records that describe these carefully collected specimens are now made available digitally through online search indices, registries, and data archives (Page et al. 2015). The increased availability of digital natural history records helps work toward Charles Elton’s realization that ecosystems can only be fully understood when we "provide conceptions which can link up into some complete scheme the colossal store of facts about natural history which has accumulated up to date in this rather haphazard manner" (Elton 1927, p65-66). So far, various initiatives have succeeded to provide comprehensive aggregate views from previously scattered natural history record siloes (BHL 2019, DataONE 2019, Edwards 2000, iDigBio 2019). However, we show that these aggregate views are subject to change as their underlying digital source data changes or becomes inaccessible. Although efforts have been made to keep track of changes in digital networked resources, such as the use of version numbers and last modified dates (Wieczorek 2012, FORCE11, Robertson 2014) and periodic archival (Costello et al. 2013),  we are not aware of the adoption of any systematic approach to preserve the accessibility as well as longevity of our digital natural history record and derived datasets. We have collected evidence that, despite hundreds of years of experience in preserving our physical natural history records, we are currently faced with a growing body of digital data that changes daily and can disappear with the push of a button.
+Our scholarly record is stitched together by an intricate web of associations between scientific publications. These associations are made explicit using citations. These citations point to related scientific works and are assumed to provide enough identifying information to allow the reader to retrieve the unaltered referenced work regardless of the time at which the reader chooses to do so (Garfield 1964). In the pre-internet era, the lookup of these references required access to one of the many academic libraries in the world. With the rise of internet accessible scientific publications, authors and readers access these references using a networked device by downloading content from publication websites. This means that researchers are increasingly citing online works to support their claims. Because the citation format of online works documents only when (e.g., 2019-10-01) and where (e.g., https://doi.org/10.123/456) the referenced work was accessed by the author (GBIF 2019, iDigBio 2016, DataONE 2012), the future reader expects the web accessed resource to remain accessible and unaltered via this single web location. Future readers may attempt to find a version of the works referenced by searching online data networks for the matching author and title, but there is no guarantee that information found this way will be exactly the same as what was originally referenced. Any reference that does not allow future readers to find the referenced work fails to satisfy the FAIR principle of findability: "F1. (meta)data are assigned a globally unique and eternally persistent identifier." (Wilkinson 2016). Our study is not alone in providing evidence that suggests that networked, location-based access to digital objects is an unreliable mechanism for providing continued access to the unaltered original work (Vision 2010, Klein 2014). Unless we change the way we preserve and cite our digital scholarly works, our physical records stored in libraries and museums around the world are likely to outlast our digital ones.
 
-\section*{Materials and Methods}
+\subsection*{Problem Characterization}
+We show that the current practice of using Uniform Resource Locators (URLs) (Berners-Lee 1994) to reference online biodiversity datasets provides no guarantee of long-term data accessibility.  Readers who encounter references that use URLs as dataset identifiers cannot be certain that the referenced data will continue to be accessible and in its exact original form. This uncertainty might be cause for alarm for researchers because, over time, the integrity of the scholarly record itself is damaged when existing references become reliable due to the loss of access to the data they reference. When data access is lost, it is possible that documented research results may become impossible to reproduce and the justification for any conclusions or hypotheses that relied on lost results may be undermined. If the use of error-prone referencing techniques is not addressed, we expect that any resulting gaps in the biodiversity data record will only become more severe.
 
-\subsection*{Tables.} 
+The current practice of relying on URLs to locate and identify referenced data is hazardous due to their demonstrated risk of link rot and content drift (Klein 2014). Link rot occurs when a URL, or link, that had previously responded to queries can no longer be reached. This can happen, for example, due to temporary outages, URL retirement, or URL migration. A link exhibits content drift when a query to the link provides content that is different from the content it provided in the past. The extent of content drift can vary; content may have received only minor edits with no changes in semantics, or it may reference a different entity altogether. When a single URL is used to locate data that may change over time, access to any particular version of the data is likely to be short-lived. We show that, in the event of link rot or content drift, any existing references that relied affected URL may become unreliable.
 
-In this section you will find an example of a table using the \verb!table! plus the \verb!adjustwidth! environment and should give you a minimal example for tables in \LaTeX (Table \ref{tab1}).
+In one study on the Genetics journal, it was reported that 40\% of links (URLs) to supplemental materials became unavailable due to link rot within one year of publication (Vision 2010). Another study (Klein 2014) confirmed that as many as one in five articles in journal of Science, Technology, and Medicine provide references that exhibit either link rot and content drift and refer to the existence of either as “reference rot”. Since existing biodiversity references largely rely on URLs to locate datasets, it is reasonable to expect that biodiversity data networks are also at risk of providing unreliable dataset references as a result of reference rot. The information systems used by major biodiversity data networks, such as DataONE, GBIF, and iDigBio, rely on data curators, such as institutional repositories, to maintain active dataset URLs, and aggregate the data found at those URLs for distribution in response to user queries. If a data curator modifies, relocates, or stops serving a particular dataset, it may become impossible to retrieve the original dataset and the integrity of the data network will suffer as a result.
 
-\begin{table}[!ht]
-\begin{adjustwidth}{-1.5in}{0in} % comment out/remove adjustwidth environment if table fits in text column.
-\centering
-\caption{{\bf Example Table.} This table demonstrates how to use the  adjustwidth environment if you need that tad bit of extra width for your figures or tables.}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-\multicolumn{4}{|l|}{\bf Heading 1} & \multicolumn{3}{|l|}{\bf Heading 2}\\ \hline
-cell 1 - row 1 & cell 2 - row 1 & cell 3 - row 1 & cell 4 - row 1 & cell 5 - row 1 & cell 6 - row 1 & cell 7 - row 1 \\ \hline
-cell 1 - row 2 & cell 2 - row 2 & cell 3 - row 2 & cell 4 - row 2 & cell 5 - row 2 & cell 6 - row 2 & cell 7 - row 2 \\ \hline
-cell 1 - row 3 & cell 2 - row 3 & cell 3 - row 3 & cell 4 - row 3 & cell 5 - row 3 & cell 6 - row 3 & cell 7 - row 3 \\ \hline
-\end{tabular}
-\label{tab1}
-\end{adjustwidth}
-\end{table}
+In this paper, we propose a methodology for measuring the existence of link rot and content drift in online data networks, then provide experimental results that confirm the existence of both link rot and content drift across all of the biodiversity data networks we considered, including BHL, DataONE, iDigBio, and GBIF. Finally, we propose a method for referencing and serving biodiversity data in a way that works toward satisfying the Findable, Accessible, Interoperable, and Reusable (FAIR) principles (Wilkinson 2016).
 
-\paragraph{Paragraph.}
-Instead of adding more and more subsections you can use the \verb!\paragraph{}! command to give structure to your manuscript.
+\section*{Methodology}
 
-\subsection*{Formulas.}
-For mathematical formulas you should use the math environment. See this example:
+Although it has been demonstrated that reference rot does occur when URLs are used for referencing scientific works (Vision 2010, Klein 2014), we are not aware of any prior studies that provide quantitative evidence that reference rot occurs specifically in biodiversity data networks. We set out to quantify the extent of reference rot in biodiversity data networks. Because reference rot occurs in the scope of individual data references, and references to digital datasets rely on URLs to locate the data, we begin by introducing terminology for characterizing the reliability of a URL according to how often it exhibits link rot and content drift.
 
-\begin{center}
-$f(A_{ik},A_{jk}) = min(A_{ik},A_{jk}) - C_{1} max(A_{ik},A_{jk}) e^{-C_{2}min(A_{ik},A_{jk})}$
-\end{center}
+\subsection*{URL Reliability}
+We assume that the URLs used to reference biodiversity datasets are expected to resolve to an Internet Protocol (IP) address in the Domain Name System. If a web server exists at the resolved IP address, a query to that address over the Hypertext Transfer Protocol (HTTP) will return a response code and, in some cases, associated content (Berners-Lee, 2005).  We classify the reliability of a URL according to the content, or lack of it, that it provides over successive queries. If a query to a URL is unsuccessful, we say that link rot has occurred. However, if a successful response is received but the retrieved content is different from the content retrieved by previous query, we say that content drift has occurred. Monitoring URLs in this way allows us not only to determine whether link rot and content drift occur, but also to capture their long-term behaviors. For example, one URL that has exhibited link rot might have failed to respond only once, whereas another might have become repeatedly unresponsive. Likewise, one URL might exhibit content drift less frequently than another whose contents change rapidly. Furthermore, various combinations of link rot and content drift behavior may indicate that one URL is more reliable than another, even though both exhibit reference rot.
 
-% newpage forces a page break if you want to clearly separate materials from results
-\newpage
+We label URLs with sets of reliability indicators according to their link rot and content drift behaviors. The defined reliability indicators are differentiated by the degree of link rot and content drift observed over a series of queries to the URL at different points in time. We characterize the responsiveness of a URL according to how often it exhibits link rot: 
+    • Unresponsive: the link has failed to respond to one or more queries
+    • Responsive: the link has responded to all recorded queries
 
-\section*{Results}
-\subsection*{Standard floating figures.}
-Figure \ref{fig2} is wrapped into a standard floating environment. That means that \LaTeX will determine the exact placement of the figure. Even though you can state preferences (see code) it can be tricky to get the right placement - especially when working on very tight manuscripts. If you want exact placement, add \verb!\usepackage{float}! to this file's header and use [H] in the figure environment's placement options.
+We characterize the stability of a URL according to how often it produces different content from one query to the next:
+    • Unstable: the content that the link points to sometimes changes
+    • Stable: the content that the link points to never changes
+
+We characterize the overall reliability of a URL according to both of its responsiveness and stability:
+    • Unreliable: the link does not always provide the expected content; it is either unresponsive, unstable, or both 
+    • Reliable: the link always provides the expected content; it is both responsive and stable
+
+Before we can determine the reliability of any given URL, we must first monitor its behavior over time by documenting how it responds to periodic queries. For the context of biodiversity, we consider the case when the content that a URL produces is a dataset.
+
+\subsection*{The Data Collection Process}
+
+We suggest that digital dataset collection practices have some analogies to well-established physical specimen collection procedures (Fig. \ref{fig1}) (Poelen 2019). If datasets are considered analogous to specimens, then the URLs that locate datasets are analogous to the physical locations of specimens in the natural world; they are where digital datasets were originally found, but not where they should be preserved. Once found, physical specimens are collected by hand; similarly, digital datasets are downloaded by querying their URLs. Once a specimen is collected and deposited to a safe, well-known repository, a record is kept that documents what the specimen is in addition to when, where, and 
+
 
 
 \begin{figure}[ht] %s state preferences regarding figure placement here
@@ -165,32 +156,123 @@ Figure \ref{fig2} is wrapped into a standard floating environment. That means th
 % use to correct figure counter if necessary
 %\renewcommand{\thefigure}{2}
 
-\includegraphics[width=\textwidth]{fig2.pdf}
+\includegraphics[width=\textwidth]{fig1a.png}
+a) Physical Specimen Collection
+\includegraphics[width=\textwidth]{fig1b.png}
+b) Digital Data Collection
 
-\caption{\color{Gray} \textbf{Example of a standard floating figure}. \textbf{A-F}, This figure is wrapped into the standard floating environment.}
+\caption{Reliable record keeping for digital datasets (b) can be achieved in an analogous way to current practices in record keeping for physical specimens (a). Biologists collect physical specimens from the natural world, thoroughly document the process, then store the specimens in facilities equipped for long-term preservation. Analogously, digital datasets that are downloaded from the internet can be thoroughly documented and archived in dedicated repositories for long-term preservation. Just as the collection of physical specimens is recorded and identified in specimen history records, the downloading of digital datasets can also be recorded and identified in dataset history records.}
 
-\label{fig2} % \label works only AFTER \caption within figure environment
+\label{fig1} % \label works only AFTER \caption within figure environment
 
 \end{figure}
 
-\subsection*{Page break in figures.}
-The standard floating figures in \LaTeX do not cope well with page breaks which can make it difficult to fit in large figures. One way to deal with this is to separate figure and caption but \verb!\caption{}! might still give troubles at page breaks. Figure 3 demonstrates a way to manually set up figure and caption such that it continues onto the next page.
-\vspace{.5cm} % set vertical space between text and figure
-\begin{adjustwidth}{-2in}{0in}
-\begin{flushright}
-\includegraphics[width=163mm]{fig3.pdf}
-\end{flushright}
-\justify 
-\color{Gray}
-\textbf {Figure 3. Example of a wide figure with multi-page caption.}
-\textbf{A}, Proin lectus ex, venenatis vel ornare eget, hendrerit tempus justo. Pellentesque molestie purus sed pretium tincidunt. Curabitur facilisis, orci vitae mollis fringilla, elit erat fermentum justo, nec luctus nunc sapien vel dolor. Cras enim justo, ullamcorper ut commodo at, posuere et ex. Fusce cursus sapien id augue maximus convallis. Praesent egestas massa in enim volutpat varius. In aliquam turpis urna, at elementum turpis eleifend at. \textbf{B}, Proin risus erat, tincidunt quis massa non, sollicitudin congue metus. Aliquam quis magna vulputate, posuere est eu, tempor nisi. Cras gravida tempus felis, vitae lacinia lacus volutpat quis. Pellentesque et eros eu mi suscipit tempus. Proin in augue scelerisque. \textbf{C}, Donec a tempor tortor, et dignissim enim. Cras in ipsum sed velit bibendum imperdiet. Aenean aliquet mauris maximus, sodales ligula sit amet, placerat felis. In tristique nisi eu risus rutrum, ac lacinia lorem cursus. Nunc eget condimentum purus. Maecenas imperdiet nisl eu accumsan gravida. \textbf{D}, Nullam tincidunt, magna sed auctor ultrices, leo mi eleifend velit, quis varius ex diam non tellus. Nam tincidunt vehicula turpis, ut euismod turpis elementum vel.
-\end{adjustwidth}
+
+by whom it was collected. The same can be done for downloaded datasets. When a dataset is downloaded, a record can be kept that details the URL that was queried, the time of query, and who (e.g. a human or software agent) issued the query that initiated the download event; we refer to this record as the dataset’s provenance record. Additionally, the dataset itself should be stored in a safe, well-known dataset archive. The final step in the collection process is to link the actual preserved specimen to its corresponding record (the “specimen history” in figure 1) via an assigned unique identifier. For digital datasets, we use cryptographic hashes of the data as unique content-based identifiers.
+
+\subsection*{Data Collection Over Time}
+
+By establishing a dedicated data observatory that follows the collection process we have described, we can build a history for each observed URL to capture its long-term reliability. Such an observatory should periodically query the URLs listed in data network’s URL registry, producing for each URL two complementary parts: 1) an archived copy of the response to the corresponding query, whether it was a dataset, an error code, or no reply at all, and 2) a record of its provenance, including the URL itself, the current date, and a content-based identifier of any dataset received. The use of a content-based data identifier is crucial; it allows us to reliably link each acquired dataset to its provenance record without the need for an intermediate index. Successive provenance records can be aggregated to construct comprehensive histories for both datasets (when and where they were found) and URLs (which datasets they produced over a series of queries over time).
+
+The constructed URL histories can be analyzed to determine whether a link was ever broken, when it was broken, and whether it became responsive again. The logs also identify the content (or lack of it) that a URL produced each time it was queried. Any change in the content identifier from query to the next indicates a change in the content of the dataset. These link breakages and content changes correlate to link rot and content drift, respectively, and allow us to determine the responsiveness, stability, and reliability of each URL over time. 
+
+\subsection*{Data Network Reliability}
+
+Now that we have outlined a method for observing and documenting the behavior of URLs over an extended period of time, we can apply our method to observe all of URLs registered by biodiversity data networks. We also extend the idea of URL reliability to entire data networks and propose that the overall reliability of a data network can be evaluated by monitoring the long-term reliability of each individual URL in the network exposes. Whereas we rigidly label individual URLs with binary indicators of responsiveness, stability, and reliability, we grade data networks according to the percentage of registered URLs that are assigned each of the reliability indicators. For example, if a data network contains three distinct URLs and we find that only two out of the three are reliable, then we say the data network is 67\% reliable.
+
+\subsection*{Experiment}
+
+The Preston software developed by Poelen et al. (Poelen 2019) implements mechanisms for monitoring data networks as we have described. It allows users to deploy a data network observatory which systematically observes the entire set of URLs registered by the network, queries each URL for data, then documents data collection and archives the results. All crawl activities, the queries they issue, and the results they produce are meticulously recorded in a string of provenance logs.
+
+We deployed several Preston observatories which periodically queried the registered dataset URLs listed by Biodiversity Heritage Library (BHL), Data Observation Network for Earth (DataONE), Global Biodiversity Information Facility (GBIF), and Integrated Digitized Bio Collections (iDigBio). Each of these networks provides online registries of URLs that locate the data in the network. The registered URLs for DataONE, GBIF, and iDigBio were queried monthly from March 2019 through October 2019. BHL was queried monthly from May 2019 through October 2019. The logs taken by each of these observatories describe the URL queries and their results, which were processed to produce the results that follow. A 
+(a) BHL
+
+(b) DataONE
+
+(c) GBIF
+
+(d) iDigBio
+
+ 
+Figure 2. Overall responsiveness, stability, and reliability from March 2019 to October 2019 as a percentage of URLs that exhibit each indicator in a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
+
+sixth observatory was constructed by aggregating the queries of the five data network observatories.
+\section*{Results}
+
+Breakdowns of the overall reliabilities of the data networks are provided in Table 1. Results are listed as percentages and total counts of URLs in the data network that were assigned each reliability indicator. When analyzing the recorded results of queries to URLs in each data network over a period of seven months, we found that, for each individual network, 5\%-44\% of registered URLs were intermittently or consistently unresponsive, 0\%-64\% produced unstable content, and 13\%-76\% became either unresponsive or unstable over the period of observation.
+
+Overall, 30\% of URLs observed across the five networks became unreliable at some point over the period of March 2019 through October 2019. Of those unreliable URLs, 48\% were unstable, 22\% became consistently unresponsive, and 70\% were at best only intermittently responsive. For 5\% of successful queries, the URL failed to respond to the next query. For 4\% of successful queries, the URL provided different content the next time it responded when queried.
+
+The changes in reliability over time for each network are visualized in figure 2. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the 
 
 
-%\clearpage makes sure that all above content is printed at this point and does not invade into the upcoming content
-%\clearpage
+(a) BHL
+
+(b) DataONE
+
+(c) GBIF
+
+(d) iDigBio
+
+
+Figure 3. Total number of URLs and unique contents observed from March 2019 to October 2019 for
+a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
+
+smallest fraction of URLs in table 1 and figure 2. Figure 3 visualizes the cumulative growth of biodiversity data networks during their periods of observation. This growth is illustrated with two metrics: the total number of unique URLs ever registered by each network and the total number of unique contents that had been downloaded from the network at each sampled point in time.
+
+The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between data networks. Some reasons for these differences can be inferred when cross-examining the
+
+
+Table 1. Overall responsiveness, stability, and reliability for URLs observed in each biodiversity data network and for all observed URLs as of October 2019.
+Data Network
+Responsive URLs
+Stable URLs*
+Reliable URLs
+BHL
+57.41\% (142,672)
+99.97\% (232,996)
+57.39\% (142,633)
+DataONE
+94.55\% (352,438)
+92.27\% (339,109)
+87.09\% (324,641)
+GBIF
+71.72\% (49,707)
+37.35\% (20,094)
+24.05\% (16,669)
+iDigBio
+88.04\% (5,477)
+68.69\% (4,251)
+61.68\% (3,837)
+All observed URLs
+78.94\% (546,645)
+90.43\% (593,469)
+70.07\% (485,203)
+*URLs that never provided content were omitted from the divisor when calculating Stable URLs percentages.
+
+table and figures. For example, although BHL scored relatively low in responsiveness due to frequent link rot, the content that it does provide is more stable than all other networks because content drift within BHL is relatively rare. Conversely, although iDigBio is relatively responsive, it has low stability because the network’s near-constant content growth far outpaces its URL growth. GBIF’s behavior was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October. Even the most reliable network, DataONE, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of just seven months. Additionally, DataONE’s growth curves indicate that there are far fewer unique contents than unique URLs; this evokes two possibilities: either much of DataONE’s URL population is unresponsive, or DataONE lists multiple URLs for many of its datasets. Because DataONE has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It’s also worth noting that the June and September spikes in BHL’s unresponsiveness were largely due to URLs that failed to respond in those particular months but actually did respond to future queries.
+
+\subsection*{Sources of Potential Numerical Error}
+We expect that the URL reliability counts generated for the figures and tables are lower than their actual values. When we qualified URLs as being reliable, responsive, and stable, we could not be certain that links did not briefly become unresponsive or change content during the month-long periods between queries. It is therefore likely that some cases of link rot and content drift were not reflected in the results. Additionally, we only query URLs that the data networks list in their dataset registries; this means that, after URL was removed from a network’s registry, we could not detect subsequent instances of reference rot. Therefore, our results represent a very optimistic upper bound on URL and network reliabilities.
+
+The results for DataONE and GBIF in figure 2 are sometimes skewed due to the pagination method that the networks use to supply users with their dataset registries. Registry pages contained set amounts (e.g. 20) of URLs and represent small slices of the actual data network registry. For registries that use pagination, the observatory would keep querying for registry pages until reaching the page or failing to respond. For instance, GBIF’s URL and dataset totals in March 2019 (figure 2.c) are low because an early query to a GBIF registry page was not answered and, consequently, the URLs of registry pages that should have followed were not discovered. Similar events happened for both the GBIF and DataONE observatories at later points in time, potentially overestimating the reliability of the data network.
+
+In an effort to minimize artificial link rot due to internet access issues in our local network, we deployed the Preston observatories in a large commercial data center in Germany.
 
 \section*{Discussion}
+
+We have shown that the reliability of URLs decreases over time in all of the major biodiversity data networks that we monitored. If current trends continue, the extent of reference rot will only worsen. Systematic changes in the way we preserve and reference data are needed to reverse these trends and improve the longevity and long-term integrity of the biodiversity data record. Before we propose such changes, it’s necessary to first understand why URLs are proving to be ill-suited for referencing data in the long term.
+
+\subsection*{Unreliability of Location-based Identifiers}
+
+The problems related to using URLs for referencing datasets are largely due to the fact that they are location-based identifiers; they describe where the data is but not necessarily what it is. Also, by definition, data accessed via URLs must be mediated by a central authority, such as the institutional repositories that serve biodiversity datasets, who can match location-based identifiers with data. Interested users are expected to trust the central authority to guarantee long-term access to the referenced data in its original form.
+
+The use of URLs as identifiers violates the requirements of uniqueness and persistence (Paskin 1998). An identifier must only ever identify one entity (uniqueness) and must persist longer than the entity it identifies (persistence) (Paskin 1998). However, as we have shown in our experiments, many URLs do not possess both uniqueness and persistence; unstable URLs forfeit uniqueness in the event of content drift, while unresponsive URLs do not persist as long as the datasets they identify.
+
+At the core of URL instability is the current practice of using URLs to identify evolving datasets rather than fixed dataset versions. If biodiversity data providers were uniformly committed to allocating one URL per dataset version, then content drift might indeed become far less common, improving overall URL stability; however, widespread social adoption of such a commitment from all data providers may be unrealistic. Additionally, such a commitment would not address link rot and URL unresponsiveness. Even if a similar commitment were made by data providers to guarantee the long-term responsiveness of URLs, it could not address the case where a data provider either loses authority over a domain name or migrates to another. For example, our deployed Preston observatories recorded the sudden migration of over 14,000 Plazi datasets from the http://plazi.cs.umb.edu/ domain to http://tb.plazi.org/, an event which invalidated any references to URLs within the first domain.
+
+Paskin proposed that “the best way to ‘future proof’ an identifier scheme is to forego any intelligence within the identifier itself” (Paskin 1998), where the notion of intelligence refers to the inclusion of meaningful information in the textual representation of the identifier. URLs are structured according to the Domain Name System specification and inherently contain some minimum amount of intelligence: the domain that the URL belongs to (IETF 1987). Thus, it is necessary to look to another identification scheme to allow for proper identification and reliable referencing.
+
 \subsection*{Transitioning to Reliable References}
 
 Although we propose a change in the fundamental mechanisms used to reference datasets, existing references can be made reliable with only minor modifications. Consider the following citation generated by GBIF according to their citation guidelines (GBIF 2018):
@@ -201,13 +283,13 @@ Although we propose a change in the fundamental mechanisms used to reference dat
 
 The citation references the eBird dataset hosted at gbif.org as it was retrieved on September 11, 2018. However, at the time of writing, the URL https://doi.org/10.15468/aomfnb redirects to a GBIF internal reference page which states that the eBird dataset was last updated in March of 2019. The dataset made available through the listed URL is different from what was originally referenced in the citation, but it is impossible to determine the extent of the changes without having access to previous versions of the data.
 
-Fortunately, references like the example above can be made more reliable by augmenting them with a content-based identifier for the dataset. Consider the following alternative citation for the eBirds dataset that use a SHA-256 content hash (NIST 2001) in addition to a URL to reference the dataset:
+Fortunately, references like the example above can be made more reliable by augmenting them with a content-based identifier for the dataset. Consider the following enriched citation for the eBirds dataset adds a SHA-256 content hash (NIST 2001):
 
 \begin{quote}
     Levatich T, Padilla F (2017). EOD - eBird Observation Dataset. Cornell Lab of Ornithology. Occurrence dataset hash://sha256/29d30b566f924355a383b13cd48c3aa239d42cba0a55f4ccfc2930289b88b43c accessed at https://doi.org/10.15468/aomfnb via GBIF.org on 2018-09-02.
 \end{quote}
 
-The content hash is captured in a multi-hash URI (Trask 2015) in the form of hash://algo/hash-string, where "algo" is a hashing algorithm (e.g., “sha256”) and "hash-string" is the content hash generated by the algorithm. In the example above, the hashing algorithm is SHA256 and the hash string starts with 29d3. The added content hash was derived from and uniquely identifies the exact version of the eBird dataset that was originally referenced. If an interested user knows of and has access to an information retrieval system that has indexed the dataset, finding the desired dataset is as simple as querying for its content hash. With the addition of a content hash, the URL becomes superfluous and is included merely to demonstrate that the URL and content hash are not mutually exclusive.
+The content hash is captured in a content address URI in the form of hash://algo/hash-string proposed by \cite{Trask2015}, where "algo" is a hashing algorithm (e.g., "sha256") and "hash-string" is the content hash generated by the algorithm. In the example above, the hashing algorithm is SHA256 and the hash string starts with 29d3. The added content hash was derived from and uniquely identifies the exact version of the eBird dataset that was originally referenced. If an interested user knows of and has access to an information retrieval system that has indexed the dataset, finding the desired dataset is as simple as querying for its content hash. With the addition of a content hash, the URL becomes superfluous and is included merely to demonstrate that the URL and content hash are not mutually exclusive.
 
 \subsection*{Enhancing Dataset References with Provenance}
 
@@ -224,7 +306,7 @@ As was the case for the dataset, the provenance itself can be retrieved by query
 % use to correct figure counter if necessary
 %\renewcommand{\thefigure}{2}
 
-\includegraphics[width=\textwidth]{figure5.jpg}
+\includegraphics[width=\textwidth]{fig5.jpg}
 
 \caption{An example of a search index mapping hashes to archives. A search for a content or provenance hash at hash-archive.org will find any associated URLs that have been registered at hash-archive.org.}
 

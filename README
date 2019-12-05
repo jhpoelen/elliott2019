@@ -6,10 +6,4 @@ https://uflorida-my.sharepoint.com/:w:/g/personal/mielliott_ufl_edu/ESPE2DedUOlL
 
 You can use https://www.overleaf.com/ to render pages and reference list without having to install LaTex. 
 
-A copy can be found at https://www.overleaf.com/read/nzsymssrzmdn , but the main version is kept at  	url = git@gist.github.com:513a986e2a5183230ccddb1eebd86489.git .
-
-https://gist.github.com/jhpoelen/513a986e2a5183230ccddb1eebd86489
-
-clone using:
-
-git clone git@gist.github.com:513a986e2a5183230ccddb1eebd86489.git
+A copy can be found at https://www.overleaf.com/read/nzsymssrzmdn , but the main version is kept here.

@@ -1,7 +1,4 @@
 ---- reference to be transcribed ----
-International DOI Foundation, Operating Procedures, 2016. https://www.doi.org/doi_handbook/9_OperatingProcedures.html#9.2  
-
-NIST. Descriptions of SHA-256, SHA-384, and SHA-512. 2001 https://web.archive.org/web/20130526224224/http://csrc.nist.gov/groups/STM/cavp/documents/shs/sha256-384-512.pdf 
 
 iDigBio, 2019. https://www.idigbio.org/  
 
@@ -16,8 +13,6 @@ DataONE Citation Guidelines, 2012. - https://www.dataone.org/citing-dataone
 Zenodo, General Policies, 2019 https://about.zenodo.org/policies/ 
 
 Internet Archive, 2019 https://help.archive.org/hc/en-us/articles/360002360111-Uploading-A-Basic-Guide 
-
-Paskin, Norman, Digital Object Identifier (DOI®) System, 2010. http://0-www.doi.org.library.touro.edu/overview/DOI-ELIS-Paskin.pdf 
 
 “Domain Names - Concepts and Facilities.” IETF, 1987. Accessed November 19, 2019. https://tools.ietf.org/html/rfc1034. 
 

@@ -42,7 +42,3 @@ FORCE11  https://www.force11.org/datacitationprinciples
 Dougherty M.V. (2018) Defining the Scholarly Record. In: Correcting the Scholarly Record for Research Integrity. Research Ethics Forum, vol 6. Springer, Cham 
 
 Garfield, E., Irving, S. H., and Torpie, R. J, 1964. THE USE OF CITATION DATA IN WRITING THE HISTORY OF SCIENCE. https://apps.dtic.mil/docs/citations/AD0466578 
-
-Berners-Lee, T., 1994. Uniform Resource Locators (URL). https://www.w3.org/Addressing/URL/url-spec.txt 
-
-Berners-Lee, T., 1994. Uniform Resource Identifier (URI): Generic Syntax. https://tools.ietf.org/html/rfc3986 

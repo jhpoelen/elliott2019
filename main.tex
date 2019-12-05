@@ -152,25 +152,11 @@ Before we can determine the reliability of any given URL, we must first monitor 
 
 \subsection*{The Data Collection Process}
 
-We suggest that digital dataset collection practices have some analogies to well-established physical specimen collection procedures (Fig. \ref{fig1}) (\cite{Poelen_2019}). If datasets are considered analogous to specimens, then the URLs that locate datasets are analogous to the physical locations of specimens in the natural world; they are where digital datasets were originally found, but not where they should be preserved. Once found, physical specimens are collected by hand; similarly, digital datasets are downloaded by querying their URLs. Once a specimen is collected and deposited to a safe, well-known repository, a record is kept that documents what the specimen is in addition to when, where, and 
+We suggest that digital dataset collection practices have some analogies to well-established physical specimen collection procedures (Fig. \ref{fig1}) (\cite{Poelen_2019}). If datasets are considered analogous to specimens, then the URLs that locate datasets are analogous to the physical locations of specimens in the natural world; they are where digital datasets were originally found, but not where they should be preserved. Once found, physical specimens are collected by hand; similarly, digital datasets are downloaded by querying their URLs. Once a specimen is collected and deposited to a safe, well-known repository, a record is kept that documents what the specimen is in addition to when, where, and by whom it was collected. 
 
+\input{figures/fig1}
 
-
-\begin{figure}[ht] %s state preferences regarding figure placement here
-
-% use to correct figure counter if necessary
-%\renewcommand{\thefigure}{2}
-
-\includegraphics[width=\textwidth]{fig1.png}
-
-\caption{Reliable record keeping for digital datasets (b) can be achieved in an analogous way to current practices in record keeping for physical specimens (a). Biologists collect physical specimens from the natural world, thoroughly document the process, then store the specimens in facilities equipped for long-term preservation. Analogously, digital datasets that are downloaded from the internet can be thoroughly documented and archived in dedicated repositories for long-term preservation. Just as the collection of physical specimens is recorded and identified in specimen history records, the downloading of digital datasets can also be recorded and identified in dataset history records.}
-
-\label{fig1} % \label works only AFTER \caption within figure environment
-
-\end{figure}
-
-
-by whom it was collected. The same can be done for downloaded datasets. When a dataset is downloaded, a record can be kept that details the URL that was queried, the time of query, and who (e.g. a human or software agent) issued the query that initiated the download event; we refer to this record as the dataset’s provenance record. Additionally, the dataset itself should be stored in a safe, well-known dataset archive. The final step in the collection process is to link the actual preserved specimen to its corresponding record (the “specimen history” in Fig. \ref{fig1}) via an assigned unique identifier. For digital datasets, we use cryptographic hashes of the data as unique content-based identifiers.
+The same can be done for downloaded datasets. When a dataset is downloaded, a record can be kept that details the URL that was queried, the time of query, and who (e.g. a human or software agent) issued the query that initiated the download event; we refer to this record as the dataset’s provenance record. Additionally, the dataset itself should be stored in a safe, well-known dataset archive. The final step in the collection process is to link the actual preserved specimen to its corresponding record (the “specimen history” in Fig. \ref{fig1}) via an assigned unique identifier. For digital datasets, we use cryptographic hashes of the data as unique content-based identifiers.
 
 \subsection*{Data Collection Over Time}
 
@@ -188,20 +174,7 @@ The Preston biodiversity dataset tracker (\cite{jorrit_poelen_2018_1410543}) imp
 
 We deployed several Preston observatories which periodically queried the registered dataset URLs listed by Biodiversity Heritage Library (BHL), Data Observation Network for Earth (DataONE), Global Biodiversity Information Facility (GBIF), and Integrated Digitized Bio Collections (iDigBio). Each of these networks provides online registries of URLs that locate the data in the network. The registered URLs for DataONE, GBIF, and iDigBio were queried monthly from March 2019 through October 2019. BHL was queried monthly from May 2019 through October 2019. The logs taken by each of these observatories describe the URL queries and their results, which were processed to produce the results that follow. A sixth observatory was constructed by aggregating the queries of the five data network observatories.
 
-\begin{figure}[ht] %s state preferences regarding figure placement here
-
-% use to correct figure counter if necessary
-%\renewcommand{\thefigure}{2}
-
-\includegraphics[width=\textwidth]{fig2.png}
-
-\caption{Overall responsiveness, stability, and reliability from March 2019 to October 2019 as a percentage of URLs that exhibit each indicator in a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
-}
-
-\label{fig2} % \label works only AFTER \caption within figure environment
-
-\end{figure}
-
+\input{figures/fig2}
 
 \section*{Results}
 
@@ -211,43 +184,11 @@ Overall, 30\% of URLs observed across the five networks became unreliable at som
 
 The changes in reliability over time for each network are visualized in Fig. \ref{fig2}. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the smallest fraction of URLs in Fig. \ref{table1}, Fig. \ref{fig2}, and Fig. \ref{fig3} visualizes the cumulative growth of biodiversity data networks during their periods of observation. This growth is illustrated with two metrics: the total number of unique URLs ever registered by each network and the total number of unique contents that had been downloaded from the network at each sampled point in time.
 
-
-\begin{figure}[ht] %s state preferences regarding figure placement here
-
-% use to correct figure counter if necessary
-%\renewcommand{\thefigure}{2}
-
-\includegraphics[width=\textwidth]{fig3.png}
-
-\caption{
-Total number of URLs and unique contents observed from March 2019 to October 2019 for a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
-}
-
-\label{fig3} % \label works only AFTER \caption within figure environment
-
-\end{figure}
+\input{figures/fig3}
 
 The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between data networks. 
 
-\begin{table}[!ht]
-\begin{adjustwidth}{-1.5in}{0in} % comment out/remove adjustwidth environment if table fits in text column.
-\centering
-\caption{Overall responsiveness, stability, and reliability for URLs observed in each biodiversity data network and for all observed URLs as of October 2019.
-}
-\begin{tabular}{|l|l|l|l|}
-\hline
-{\bf Data Network} & {\bf Responsive URLs} & {\bf Stable URLs*} & {\bf Reliable URLs} \\ \hline
-BHL & 57.41\% (142,672) & 99.97\% (232,996) & 57.39\% (142,633) \\ \hline
-DataONE & 94.55\% (352,438) & 92.27\% (339,109) & 87.09\% (324,641) \\ \hline
-GBIF & 71.72\% (49,707) & 37.35\% (20,094) & 24.05\% (16,669) \\ \hline
-iDigBio & 88.04\% (5,477) & 68.69\% (4,251) & 61.68\% (3,837)  \\ \hline
-All observed URLs & 78.94\% (546,645) & 90.43\% (593,469) & 70.07\% (485,203) \\ \hline
-\end{tabular}
-\label{table1}
-\end{adjustwidth}
-\end{table}
-
-*URLs that never provided content were omitted from the divisor when calculating Stable URLs percentages.
+\input{tables/table1}
 
 Some reasons for these differences can be inferred when cross-examining the table and figures. For example, although BHL scored relatively low in responsiveness due to frequent link rot, the content that it does provide is more stable than all other networks because content drift within BHL is relatively rare. Conversely, although iDigBio is relatively responsive, it has low stability because the network’s near-constant content growth far outpaces its URL growth. GBIF’s behavior was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October. Even the most reliable network, DataONE, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of just seven months. Additionally, DataONE’s growth curves indicate that there are far fewer unique contents than unique URLs; this evokes two possibilities: either much of DataONE’s URL population is unresponsive, or DataONE lists multiple URLs for many of its datasets. Because DataONE has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It’s also worth noting that the June and September spikes in BHL’s unresponsiveness were largely due to URLs that failed to respond in those particular months but actually did respond to future queries.
 

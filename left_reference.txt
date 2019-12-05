@@ -1,27 +1,13 @@
 ---- reference to be transcribed ----
 International DOI Foundation, Operating Procedures, 2016. https://www.doi.org/doi_handbook/9_OperatingProcedures.html#9.2  
 
-Jorrit H. Poelen (2019a). A biodiversity dataset graph: GBIF, iDigBio, BioCASe (Version 0.0.2) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3484205. 
-
-Jorrit H. Poelen (2019b). A biodiversity dataset graph: BHL (Version 0.0.2) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3484555. 
-
-Jorrit H. Poelen (2019c). A biodiversity dataset graph: DataONE (Version 0.0.3) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3483218. 
-
-Jorrit H. Poelen (2019d). Biodiversity Dataset Archive [Data set]. Internet Archive. https://archive.org/details/biodiversity-dataset-archives 
-
-Jorrit H. Poelen 2019. “To Connect Is to Preserve: On Frugal Data Integration and Preservation Solutions.” OSF. June 4. doi:10.17605/OSF.IO/A2V8G. 
-
 NIST. Descriptions of SHA-256, SHA-384, and SHA-512. 2001 https://web.archive.org/web/20130526224224/http://csrc.nist.gov/groups/STM/cavp/documents/shs/sha256-384-512.pdf 
-
-Biodiversity Heritage Library (BHL), 2019. https://www.biodiversitylibrary.org/ 
-
-DataONE, 2019. https://www.dataone.org/ 
-
-GBIF, 2019. https://www.gbif.org/ 
 
 iDigBio, 2019. https://www.idigbio.org/  
 
-GBIF.org (2019), GBIF Citation Guidelines. Available from: https://www.gbif.org/citation-guidelines [13 August 2018]. 
+GBIF.org (2019), GBIF Citation Guidelines. Available from: https://www.gbif.org/citation-guidelines [13 August 2018].
+
+GBIF: The Global Biodiversity Information Facility (year) What is GBIF?. Available from https://www.gbif.org/what-is-gbif [13 August 2018].
 
 iDigBio Citation Guidelines, 2016. - https://www.idigbio.org/content/idigbio-terms-use-policy 
 

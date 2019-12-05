@@ -67,6 +67,8 @@
 \usepackage[fulladjust]{marginnote}
 \reversemarginpar
 
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
+
 % document begins here
 \begin{document}
 \vspace*{0.35in}
@@ -99,13 +101,13 @@ José A.B. Fortes\textsuperscript{1}
 %\clearpage makes sure that all above content is printed at this point and does not invade into the upcoming content
 %\clearpage
 
-\section*{Abstract}
-Scientific discovery increasingly relies on digital datasets to capture measurements and outcomes. However, no systematic approach has been adopted to reliably reference and provide access to our digital datasets. Our existing data infrastructures have grown accustomed to using location-based identifiers such as URLs in an attempt to retain our digital knowledge. We hypothesize that URLs are not sufficient to ensure long-term data access, then propose a method for evaluating long-term URL reliability.
+\begin{abstract}
+\noindent Scientific discovery increasingly relies on digital datasets to capture measurements and outcomes. However, no systematic approach has been adopted to reliably reference and provide access to our digital datasets. Our existing data infrastructures have grown accustomed to using location-based identifiers such as URLs in an attempt to retain our digital knowledge. We hypothesize that URLs are not sufficient to ensure long-term data access, then propose a method for evaluating long-term URL reliability.
 
 After taking periodic inventories from March through October 2019 of the data served by major biodiversity aggregators, including GBIF, iDigBio, DataONE, and BHL, we found that, for each network, 5\%-44\% of registered URLs were intermittently or consistently unresponsive, 0\%-64\% produced unstable content, and 13\%-76\% became either unresponsive or unstable over the period of observation. We propose to use content-based identifiers to reliably track and reference datasets while enabling decentralized archiving schemes. We propose a method for properly tracking and archiving datasets that can be used to guarantee fixed content and encourage long-term accessibility by leveraging content- rather than location-based identifiers.
+\end{abstract}
 
-Key words:
-Biodiversity, Ecological Informatics, Information Systems, Information Retrieval
+\keywords{Biodiversity, Ecological Informatics, Information Systems, Information Retrieval}
 
 \section*{Introduction}
 Over the course of hundreds of years, naturalists and biologists have systematically collected physical evidence from an ever-changing natural world. Through well-established protocols and institutional support, many of these natural history collections have withstood the ravages of time (\cite{Hortal_2015}, \cite{Davis_1996}). Records that describe these carefully collected specimens are now made available digitally through online search indices, registries, and data archives (\cite{Page_2015}). The increased availability of digital natural history records helps work toward Charles Elton’s realization that ecosystems can only be fully understood when we "provide conceptions which can link up into some complete scheme the colossal store of facts about natural history which has accumulated up to date in this rather haphazard manner" (\cite{Elton_1927}). So far, various initiatives have succeeded to provide comprehensive aggregate views from previously scattered natural history record siloes (\cite{Rinaldo_2009}, \cite{Michener_2011}, \cite{Edwards_2000}, \cite{matsunaga2013integrated}, \cite{gbif_org_2019}). However, we show that these aggregate views are subject to change as their underlying digital source data changes or becomes inaccessible. Although efforts have been made to keep track of changes in digital networked resources, such as the use of version numbers and last modified dates (\cite{Wieczorek_2012}, FORCE11, \cite{Robertson_2014}) and periodic archival (\cite{Costello_2013}),  we are not aware of the adoption of any systematic approach to preserve the accessibility as well as longevity of our digital natural history record and derived datasets. We have collected evidence that, despite hundreds of years of experience in preserving our physical natural history records, we are currently faced with a growing body of digital data that changes daily and can disappear with the push of a button.
@@ -303,5 +305,34 @@ We thank ...
 
 %This defines the bibliographies style. Search online for a list of available styles.
 \bibliographystyle{abbrv}
+
+%--------------------------------------------------------%
+%	FIGURES
+%--------------------------------------------------------%
+
+% NOTE: If your submission guidelines don't require figures
+% at the end, you can comment out the two lines below,
+% and embed figures in the text of content.tex instead of here
+
+\newpage
+\section*{Figures}
+\input{figures/fig1}
+\input{figures/fig2}
+\input{figures/fig3}
+\input{figures/fig4}
+\input{figures/fig5}
+
+%--------------------------------------------------------%
+%	TABLES
+%--------------------------------------------------------%
+
+% NOTE: If your submission guidelines don't require tables
+% at the end, you can comment out the two lines below,
+% and embed tables in the text of content.tex instead of here
+
+\newpage
+\section*{Tables}
+
+\input{tables/table1}
 
 \end{document}

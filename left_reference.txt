@@ -35,10 +35,7 @@ Paskin, Norman, Digital Object Identifier (DOI®) System, 2010. http://0-www.doi
 
 “Domain Names - Concepts and Facilities.” IETF, 1987. Accessed November 19, 2019. https://tools.ietf.org/html/rfc1034. 
 
-Davis, Elisabeth B., and Diane Schmidt. 1996. Guide to Information Sources in the Botanical Sciences. Vol. 2nd ed. Reference Sources in Science and Technology. Englewood, Colo: Libraries Unlimited. http://search.ebscohost.com/login.aspx?direct=true&AuthType=ip,uid&db=nlebk&AN=18394&site=eds-live. 
-
 FORCE11  https://www.force11.org/datacitationprinciples 
 
 Dougherty M.V. (2018) Defining the Scholarly Record. In: Correcting the Scholarly Record for Research Integrity. Research Ethics Forum, vol 6. Springer, Cham 
 
-Garfield, E., Irving, S. H., and Torpie, R. J, 1964. THE USE OF CITATION DATA IN WRITING THE HISTORY OF SCIENCE. https://apps.dtic.mil/docs/citations/AD0466578 

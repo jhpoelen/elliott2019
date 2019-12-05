@@ -1,5 +1,4 @@
 \documentclass[12pt,letterpaper]{article}
-\usepackage[top=0.85in,left=2.75in,footskip=0.75in,marginparwidth=2in]{geometry}
 
 % use Unicode characters - try changing the option if you run into troubles with special characters (e.g. umlauts)
 \usepackage[utf8]{inputenc}
@@ -24,8 +23,8 @@
 \textheight 8.75in
 
 % Remove % for double line spacing
-%\usepackage{setspace} 
-%\doublespacing
+\usepackage{setspace} 
+\doublespacing
 
 % use adjustwidth environment to exceed text width (see examples in text)
 \usepackage{changepage}
@@ -41,13 +40,6 @@
 % headrule, footrule and page numbers
 \usepackage{lastpage,fancyhdr,graphicx}
 \usepackage{epstopdf}
-\pagestyle{myheadings}
-\pagestyle{fancy}
-\fancyhf{}
-\rfoot{\thepage/\pageref{LastPage}}
-\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
-\fancyheadoffset[L]{2.25in}
-\fancyfootoffset[L]{2.25in}
 
 % use \textcolor{color}{text} for colored text (e.g. highlight to-do areas)
 \usepackage{color}
@@ -79,9 +71,6 @@
 % document begins here
 \begin{document}
 \vspace*{0.35in}
-
-% set doublespacing for text
-\doublespace
 
 % title goes here:
 \begin{flushleft}
@@ -166,7 +155,9 @@ Before we can determine the reliability of any given URL, we must first monitor 
 
 We suggest that digital dataset collection practices have some analogies to well-established physical specimen collection procedures (Fig. \ref{fig1}) (\cite{Poelen_2019}). If datasets are considered analogous to specimens, then the URLs that locate datasets are analogous to the physical locations of specimens in the natural world; they are where digital datasets were originally found, but not where they should be preserved. Once found, physical specimens are collected by hand; similarly, digital datasets are downloaded by querying their URLs. Once a specimen is collected and deposited to a safe, well-known repository, a record is kept that documents what the specimen is in addition to when, where, and by whom it was collected. 
 
-\input{figures/fig1}
+% uncomment for inline figures
+% \input{figures/fig1}
+(insert figure 1 / see appendix)
 
 The same can be done for downloaded datasets. When a dataset is downloaded, a record can be kept that details the URL that was queried, the time of query, and who (e.g. a human or software agent) issued the query that initiated the download event; we refer to this record as the dataset’s provenance record. Additionally, the dataset itself should be stored in a safe, well-known dataset archive. The final step in the collection process is to link the actual preserved specimen to its corresponding record (the “specimen history” in Fig. \ref{fig1}) via an assigned unique identifier. For digital datasets, we use cryptographic hashes of the data as unique content-based identifiers.
 
@@ -186,7 +177,9 @@ The Preston biodiversity dataset tracker (\cite{jorrit_poelen_2018_1410543}) imp
 
 We deployed several Preston observatories which periodically queried the registered dataset URLs listed by Biodiversity Heritage Library (BHL), Data Observation Network for Earth (DataONE), Global Biodiversity Information Facility (GBIF), and Integrated Digitized Bio Collections (iDigBio). Each of these networks provides online registries of URLs that locate the data in the network. The registered URLs for DataONE, GBIF, and iDigBio were queried monthly from March 2019 through October 2019. BHL was queried monthly from May 2019 through October 2019. The logs taken by each of these observatories describe the URL queries and their results, which were processed to produce the results that follow. A sixth observatory was constructed by aggregating the queries of the five data network observatories.
 
-\input{figures/fig2}
+% uncomment for inline figures
+% \input{figures/fig2}
+(insert figure 2, see appendix)
 
 \section*{Results}
 
@@ -196,12 +189,16 @@ Overall, 30\% of URLs observed across the five networks became unreliable at som
 
 The changes in reliability over time for each network are visualized in Fig. \ref{fig2}. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the smallest fraction of URLs in Fig. \ref{table1}, Fig. \ref{fig2}, and Fig. \ref{fig3} visualizes the cumulative growth of biodiversity data networks during their periods of observation. This growth is illustrated with two metrics: the total number of unique URLs ever registered by each network and the total number of unique contents that had been downloaded from the network at each sampled point in time.
 
-\input{figures/fig3}
+% uncomment for inline figures
+% \input{figures/fig3}
+(insert figure 3, see appendix)
+
 
 The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between data networks. 
 
-\input{tables/table1}
-
+% uncomment for inline tables
+% \input{tables/table1}
+(insert table 1, see appendix)
 Some reasons for these differences can be inferred when cross-examining the table and figures. For example, although BHL scored relatively low in responsiveness due to frequent link rot, the content that it does provide is more stable than all other networks because content drift within BHL is relatively rare. Conversely, although iDigBio is relatively responsive, it has low stability because the network’s near-constant content growth far outpaces its URL growth. GBIF’s behavior was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October. Even the most reliable network, DataONE, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of just seven months. Additionally, DataONE’s growth curves indicate that there are far fewer unique contents than unique URLs; this evokes two possibilities: either much of DataONE’s URL population is unresponsive, or DataONE lists multiple URLs for many of its datasets. Because DataONE has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It’s also worth noting that the June and September spikes in BHL’s unresponsiveness were largely due to URLs that failed to respond in those particular months but actually did respond to future queries.
 
 \subsection*{Sources of Potential Numerical Error}
@@ -231,7 +228,9 @@ An Alternative: Unique Content-Based Identifiers
 Instead of identifying digital datasets by location (i.e. URL), we can identify datasets by their content. One way to achieve this is to use algorithmically generated content-based identifiers. A variety of cryptographic hashing algorithms are available which guarantee a single unique hash, representable as text, for any given dataset (\cite{SHA2_2001}). Because the hash itself is deterministically derived from the content it identifies, we say that it is a content-based identifier. Because hashes are deterministic, anyone interested in identifying a dataset can simply compute its hash without the need for some mediating central authority (\cite{Paskin_1999}). If a change is made to the dataset, then the hash computed from the modified dataset will be different from that of the original. Therefore, if the hash of a dataset is the same as the referenced hash, it must be the originally referenced dataset (\cite{SHA2_2001}).
 Because hash identifiers can only identify the exact content that was referenced, content drift is impossible; a content hash will never match with either a different version of the content any other content. Additionally, the chance of link rot is diminished due to the lack of a single point of failure in the form of a central authority that is solely responsible for making content available. The shift from location-based to content-based identifiers allows for the decoupling of future dataset accessibility from the original point of access. As long as there exists some well-known and accessible data repository that has archived the desired content, it can always be retrieved. Even if one repository becomes inaccessible, another may be available to retrieve the content. If a repository changes location, the reference is still reliable; it is the interested user’s responsibility to find either the repository’s new location or another repository that hosts the desired dataset. Additionally, it is worth noting that duplication of content across different information platforms does not lead to ambiguous references, but rather to distributed copies of the same reliably addressed content. Figure 4 demonstrates the differences in referenced dataset retrieval when using location- versus content-based identifiers.
 
-\input{figures/fig4}
+% uncomment for inline figures
+% \input{figures/fig4}
+(insert figure 4, see appendix)
 
 \subsection*{Transitioning to Reliable References}
 
@@ -261,7 +260,9 @@ A dataset reference can be given enhanced context by also referencing the record
 
 As was the case for the dataset, the provenance itself can be retrieved by querying a well-known information system that has indexed the hash of the referenced provenance record. Note that the provenance hash is not strictly necessary to make a dataset reference reliable; the dataset hash alone is sufficient. However, explicitly referencing the provenance of the dataset is useful because it allows future readers to also retrieve the same context that the original researcher who referenced the dataset had access to. More generally, the provenance describes the context of the retrieval of any type of content (e.g. datasets, metadata, citation files, etc.). The types of information in the provenance depend on the implementation of the data observatory, but at a minimum include the URLs that were queried to produce the content, the dates of the queries, the format of the content, and the data registries that were searched to find the content.
 
-\input{figures/fig5}
+% uncomment for inline figures
+% \input{figures/fig5}
+(insert figure 5, see appendix)
 
  The use cases for the included provenance hash are many. For example, if the provenance record of a dataset is found, it may be possible to traverse the provenance and find newer versions of the dataset. This requires that the various versions of the dataset were observed at some point in time by a provenance-generating data observatory, properly archived, then made publicly accessible.
 

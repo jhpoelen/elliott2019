@@ -4,7 +4,9 @@
 \usepackage[utf8]{inputenc}
 
 % clean citations
-\usepackage{cite}
+% see https://tex.stackexchange.com/questions/284982/cse-citation-style#285252
+\usepackage[round,sort&compress]{natbib}
+\setcitestyle{aysep={}}
 
 % hyperref makes references clicky. use \url{www.example.com} or \href{www.example.com}{description} to add a clicky url
 \usepackage{nameref,hyperref}

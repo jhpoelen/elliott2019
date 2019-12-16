@@ -3,13 +3,25 @@
 % use to correct figure counter if necessary
 %\renewcommand{\thefigure}{2}
 
-\includegraphics[width=\textwidth]{figures/fig3.png}
+\centering
+\subfigure[BHL]{%
+\label{fig:network-growth-a}%
+\includegraphics[width=0.5\textwidth]{figures/fig3a.pdf}}%
+\subfigure[DataONE]{%
+\label{fig:network-growth-b}%
+\includegraphics[width=0.5\textwidth]{figures/fig3b.pdf}} \\
+\subfigure[GBIF]{%
+\label{fig:network-growth-c}%
+\includegraphics[width=0.5\textwidth]{figures/fig3c.pdf}}%
+\subfigure[iDigBio]{%
+\label{fig:network-growth-d}%
+\includegraphics[width=0.5\textwidth]{figures/fig3d.pdf}} \\
+\includegraphics[scale=0.6]{figures/fig3legend.pdf}%
 
-\caption{
-Total number of URLs and unique contents observed from March 2019 to October 2019 for a) BHL, b) DataONE, c) GBIF, and d) iDigBio.
-}
+\caption[Network URL and content counts over time]{Total number of URLs and unique contents observed from March 2019 through October 2019 in \subref{fig:network-growth-a} BHL, \subref{fig:network-growth-b} DataONE, \subref{fig:network-growth-c} GBIF, and \subref{fig:network-growth-d} iDigBio.
+}%
 
-\label{fig3} % \label works only AFTER \caption within figure environment
+\label{fig:network-growth} % \label works only AFTER \caption within figure environment
 
 \end{figure}
 

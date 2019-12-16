@@ -3,11 +3,17 @@
 % use to correct figure counter if necessary
 %\renewcommand{\thefigure}{2}
 
-\includegraphics[width=\textwidth]{figures/fig1.png}
+\centering
+\subfigure[Physical specimen collection]{%
+\label{fig:collection-a}%
+\includegraphics[scale=1]{figures/fig1a.pdf}} \\
+\subfigure[Digital data collection]{%
+\label{fig:collection-b}%
+\includegraphics[scale=1]{figures/fig1b.pdf}}%
 
-\caption{Reliable record keeping for digital datasets (b) can be achieved in an analogous way to current practices in record keeping for physical specimens (a). Biologists collect physical specimens from the natural world, thoroughly document the process, then store the specimens in facilities equipped for long-term preservation. Analogously, digital datasets that are downloaded from the internet can be thoroughly documented and archived in dedicated repositories for long-term preservation. Just as the collection of physical specimens is recorded and identified in specimen history records, the downloading of digital datasets can also be recorded and identified in dataset history records.}
+\caption{Reliable record keeping for digital datasets \subref{fig:collection-b} can be achieved in an analogous way to current practices in record keeping for physical specimens \subref{fig:collection-a}. Biologists collect physical specimens from the natural world, thoroughly document the process, then store the specimens in facilities equipped for long-term preservation. Analogously, digital datasets that are downloaded from the internet can be thoroughly documented and archived in dedicated repositories for long-term preservation. Just as the collection of physical specimens is recorded and identified in specimen history records, the downloading of digital datasets can also be recorded and identified in dataset history records.}%
 
-\label{fig1} % \label works only AFTER \caption within figure environment
+\label{fig:collection} % \label works only AFTER \caption within figure environment
 
 \end{figure}
 

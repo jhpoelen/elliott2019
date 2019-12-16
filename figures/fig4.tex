@@ -3,11 +3,18 @@
 % use to correct figure counter if necessary
 %\renewcommand{\thefigure}{2}
 
-\includegraphics[width=\textwidth]{figures/fig4.pdf}
+\centering
+\subfigure[URL reference]{%
+\label{fig:verification-a}%
+\includegraphics[scale=0.74]{figures/fig4a.pdf}} \\
+\subfigure[Content URI reference]{%
+\label{fig:verification-b}%
+\includegraphics[scale=0.74]{figures/fig4b.pdf}} \\
+\includegraphics[scale=.9]{figures/fig4legend.pdf}%
 
-\caption{Visualization of content resolution for location- versus content-based identifiers. 1) URLs point to a known location of a dataset, but do not guarantee either the presence or authenticity of the retrieved dataset; 2) the use of a DOI that resolves to a URL adds a layer of redirection; 3) A content-addressed dataset can be found by matching against recomputed hashes of available datasets in an archive; 4) well-known (online) hash indices can be used to facilitate discovery of dataset locations associated with a specific content hash.
-}
+\caption{Content resolution and verification for references that use location- versus content-based identifiers. \subref{fig:verification-a} Location-based identifiers (e.g. URLs) cannot verify the authenticity of retrieved content. \subref{fig:verification-b} Content-based identifiers (e.g. Content URIs) can verify the authenticity of retrieved data by comparing the hash of the retrieved data with the hash embedded in the identifier.
+}%
 
-\label{fig4} % \label works only AFTER \caption within figure environment
+\label{fig:verification} % \label works only AFTER \caption within figure environment
 
 \end{figure}

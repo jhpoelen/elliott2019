@@ -128,6 +128,9 @@ FUNCTION {fin.entry}
   newline$
 }
 
+FUNCTION {add.blank}
+{  " " * before.all 'output.state :=
+}
 FUNCTION {add.colon} % this functin was created to add colon after school address of thesis
 { duplicate$ empty$
  'skip$
@@ -157,9 +160,6 @@ FUNCTION {new.sentence}
       if$
     }
   if$
-}
-FUNCTION {add.blank}
-{  " " * before.all 'output.state :=
 }
 
 FUNCTION {date.block}

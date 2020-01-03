@@ -17,8 +17,8 @@
 \newline
 \end{flushleft}
 
-% now start line numbers
-\linenumbers
+% now start line numbers \\ Removing since BioScience adds their own line numbers
+% \linenumbers
 
 %\clearpage makes sure that all above content is printed at this point and does not invade into the upcoming content
 %\clearpage
@@ -90,7 +90,7 @@ Before we can determine the reliability of any given URL, we must first monitor 
 We suggest that digital dataset collection practices have some analogies to well-established physical specimen collection procedures (see figure \ref{fig:collection}) \citep{Poelen_2019}. If datasets are considered analogous to specimens, then the URLs that locate datasets are analogous to the physical locations of specimens in the natural world; they are where digital datasets were originally found, but not where they should be preserved. Once found, physical specimens are collected by hand; similarly, digital datasets are downloaded by querying their URLs. Once a specimen is collected and deposited to a safe, accessible repository, a record is kept that documents what the specimen is in addition to when, where, and by whom it was collected.
 
 % uncomment for inline figures
-% \input{figures/fig1}
+\input{figures/fig1}
 
 The same can be done for downloaded datasets. When a dataset is downloaded, a record can be kept that details the URL that was queried, the time of query, and who (e.g., a human or software agent) issued the query that initiated the download event; we refer to this record as the dataset's provenance record \citep{Pasquier_2017}. Additionally, the dataset itself should be stored in a safe, accessible dataset archive. The final step in the collection process is to link the actual preserved specimen to its corresponding record (see figure \ref{fig:collection-a}) via an assigned unique identifier.
 
@@ -109,10 +109,6 @@ The Preston biodiversity dataset tracker \citep{jorrit_poelen_2018_1410543} impl
 
 We deployed several Preston observatories that periodically queried the registered dataset URLs listed by Biodiversity Heritage Library (BHL), Data Observation Network for Earth (DataONE), Global Biodiversity Information Facility (GBIF), and Integrated Digitized Bio Collections (iDigBio). Each of these networks provides online registries of URLs that locate the data in the network. The registered URLs for DataONE, GBIF, and iDigBio were queried monthly from March 2019 through October 2019. BHL was queried monthly from May 2019 through October 2019. The logs taken by each of these observatories describe the URL queries and their results, which were processed to produce the results that follow. A fifth observatory was constructed by aggregating the queries of the four data network observatories.
 
-% uncomment for inline figures
-% \input{figures/fig2}
-
-
 
 \section*{Results}
 \label{sec:results}
@@ -123,11 +119,15 @@ We found that 30\% of URLs observed across the four networks became unreliable a
 The changes in reliability over time for each network are visualized in figure \ref{fig:network-reliability}. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the smallest fraction of URLs in table \ref{table1}, figure \ref{fig:network-reliability}, and figure \ref{fig:network-growth}. Figure \ref{fig:network-growth} visualizes the cumulative growth of biodiversity data networks during their periods of observation. This growth is illustrated with two metrics: the total number of unique URLs ever registered in each network and the total number of unique contents that were downloaded from the network at each monthly sampling.
 
 % uncomment for inline figures
-% \input{figures/fig3}
+\input{figures/fig2}
+
+
+% uncomment for inline figures
+\input{figures/fig3}
 
 
 % uncomment for inline tables
-% \input{tables/table1}
+\input{tables/table1}
 
 The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between data networks. Reasons for these differences might be inferred when cross-examining table \ref{table1} and figures \ref{fig:network-reliability} and \ref{fig:network-growth}. For example, although BHL scored relatively low in responsiveness due to frequent link rot, the content that it does provide is more stable than all other networks because content drift within BHL is relatively rare. Conversely, although iDigBio is relatively responsive, it has low stability because the network's near-constant content growth far outpaces its URL growth. GBIF's behavior was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October. Even the most reliable network, DataONE, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of just seven months. Additionally, DataONE's growth curves indicate that there are far fewer unique contents than unique URLs. This mismatch suggests two possibilities: either much of DataONE's URL population is unresponsive, or DataONE lists multiple URLs for many of its datasets. Because DataONE has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It's also worth noting that the June and September spikes in BHL's unresponsiveness were largely due to URLs that failed to respond in those particular months but did respond to future queries.
 
@@ -162,7 +162,7 @@ The shift from location-based to content-based identifiers decouples future data
 If a dataset version were identified with a content-based hash, its duplication across different platforms would not lead to ambiguous references, but rather to distributed copies of the same reliably addressed content.
 
 % uncomment for inline figures
-% \input{figures/fig4}
+\input{figures/fig4}
 
 \subsection*{Transitioning to Reliable References}
 Although we propose a change in the fundamental mechanisms used to reference datasets, existing references can be made reliable with only minor modifications. Consider the following citation generated by GBIF according to their citation guidelines \citepalias{gbif_2019}:
@@ -194,9 +194,6 @@ Levatich T, Padilla F (2017). EOD - eBird Observation Dataset. Cornell Lab of Or
 
 As was the case for the dataset, the provenance itself can be retrieved by querying an information system that has indexed the hash of the referenced provenance record. Note that the provenance hash is not strictly necessary to make a dataset reference reliable; the dataset hash alone is sufficient. However, explicitly referencing the provenance of the dataset is useful because it allows future readers to retrieve the same context to which the researcher referencing the dataset had access. More generally, the provenance describes the context of the retrieval of any type of content (e.g., datasets, metadata, citation files, etc.). The types of information in the provenance depend on the implementation of the data observatory, but at a minimum include the URLs that were queried to produce the content, the dates of the queries, the format of the content, and the data registries that were searched to find the content.
 
-% uncomment for inline figures
-% \input{figures/fig5}
-
 The use cases for including the provenance hash are many. For example, if the provenance record of a dataset is found, it may be possible to traverse the provenance and find newer versions of the dataset. This requires that the various versions of the dataset were observed by a provenance-generating data observatory, properly archived, then made publicly accessible.
 
 A provenance record relates to a dataset the way that a map relates to a location: a provenance record provides a context to understand the origin and relations of a dataset. This provenance context may be limited to few metadata elements related to a single dataset (e.g., web location, data format, author, license), but can also include a comprehensive description of a biodiversity dataset network consisting of thousands of datasets and their associations. Also, because provenance records are datasets themselves, they can be reliably referenced and embedded in other provenance records using their content URIs. We used such a composition of content URIs and provenance records as part of our monitoring scheme \citep{jorrit_poelen_2018_1410543} to track the reliability of URLs in biodiveristy data networks over time (see table \ref{table1} and figures \ref{fig:network-reliability} and \ref{fig:network-growth}). The following citation references the history of the entire DataONE network over the period of observation by one of our Preston observatories:
@@ -208,6 +205,9 @@ doi:10.5281/zenodo.3483218 . \seqsplit{hash://sha256/87de0898919d2212977a586965e
 
 \subsection*{Dataset Retrieval Using Hash References}
 The dataset and provenance hashes referenced in the sample references above were produced by our Preston observatories, which were set up to monitor the four data networks. Both the referenced dataset and its provenance are available online at zenodo.org \citep{poelen_jorrit_h_2019_3483218, poelen_jorrit_h_2019_3484555, poelen_jorrit_h_2019_3484205} and archive.org \citep{poelen_jorrit_h_2019_archive_org}. A query for the provenance hash in the search bar at zenodo.org or hash-archive.org should direct the user to an archived repository of Preston observations that contains both the dataset and its provenance (see figure \ref{fig5}). Given Zenodo's long-term guarantee for data persistence and version availability \citep{zenodo_2019}, the dataset reference is now reliable; it is effectively immune to both link rot and content drift. Future readers can trust that the dataset will stay available and, when downloaded, identically match the version of the eBird dataset we referenced. Note that, to comply with Zenodo's limitations on user uploads \citep{zenodo_2019}, we only exposed the set of provenance hashes collected by each deployed Preston observatory for search indexing, which are far fewer in number than the dataset hashes. Thus, a query to zenodo.org for the dataset hash above should not produce any results. This is an artificial limitation; ideally, an information system would index the dataset hashes as well. Note that our Zenodo publication for the GBIF/iDigBio/BioCASe observatory \citep{poelen_jorrit_h_2019_3484205} contains only provenance, although the Internet Archive publication \citep{poelen_jorrit_h_2019_archive_org} contains the content as well as provenance. Our Zenodo and Internet Archive publications for BHL \citep{poelen_jorrit_h_2019_3484555, poelen_jorrit_h_2019_archive_org_bhl} and DataONE \citep{poelen_jorrit_h_2019_3483218,poelen_jorrit_h_2019_archive_org_dataone} contain both content and provenance.
+
+% uncomment for inline figures
+\input{figures/fig5}
 
 Several biodiversity data aggregators, such as GBIF and iDigBio, produce a citation file for each user query to allow researchers to simply reference a single citation file rather than each individual dataset \citepalias{gbif_2019,idigbio_2016}. A citation file lists the URLs, attributions, and retrieval dates of the datasets that were returned by a query. We have demonstrated that dataset URLs are unreliable references; thus, citation files that rely on URLs as references are also unreliable. Citation files could be made reliable if they were augmented with the hashes of the retrieved datasets and, optionally, their provenance records. In fact, citation files themselves can be referenced by hash, along with accompanying provenance hashes, as long as they are archived and made accessible.
 
@@ -257,34 +257,34 @@ The research reported in this paper was funded in part by a grant (NSF OAC 18392
 %This defines the bibliographies style. Search online for a list of available styles.
 \bibliographystyle{references/cse}
 
-%--------------------------------------------------------%
-%	FIGURES
-%--------------------------------------------------------%
+% %--------------------------------------------------------%
+% %	FIGURES
+% %--------------------------------------------------------%
 
-% NOTE: If your submission guidelines don't require figures
-% at the end, you can comment out the two lines below,
-% and embed figures in the text of content.tex instead of here
+% % NOTE: If your submission guidelines don't require figures
+% % at the end, you can comment out the two lines below,
+% % and embed figures in the text of content.tex instead of here
 
-\newpage
-\section*{Figures}
-\input{figures/fig1}
-\input{figures/fig2}
-\input{figures/fig3}
-\input{figures/fig4}
-\input{figures/fig5}
+% \newpage
+% \section*{Figures}
+% \input{figures/fig1}
+% \input{figures/fig2}
+% \input{figures/fig3}
+% \input{figures/fig4}
+% \input{figures/fig5}
 
-%--------------------------------------------------------%
-%	TABLES
-%--------------------------------------------------------%
+% %--------------------------------------------------------%
+% %	TABLES
+% %--------------------------------------------------------%
 
-% NOTE: If your submission guidelines don't require tables
-% at the end, you can comment out the two lines below,
-% and embed tables in the text of content.tex instead of here
+% % NOTE: If your submission guidelines don't require tables
+% % at the end, you can comment out the two lines below,
+% % and embed tables in the text of content.tex instead of here
 
-\clearpage
-\newpage
-\section*{Tables}
+% \clearpage
+% \newpage
+% \section*{Tables}
 
-\input{tables/table1}
+% \input{tables/table1}
 
 \end{document}

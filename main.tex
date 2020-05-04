@@ -139,7 +139,6 @@ We expect that the URL reliability counts generated for the figures and tables a
 
 The results for DataONE and GBIF in figure \ref{fig:network-reliability} are sometimes skewed due to the pagination method that the networks use to supply users with their dataset registries. Registry pages contained set amounts (e.g., 20) of URLs and represent small slices of the actual data network registry. For registries that use pagination, the observatory would keep querying for registry pages until reaching the page or failing to get a response. For instance, GBIF's URL and dataset totals in March 2019 (see figure \ref{fig:network-growth-c}) are low because an early query to a GBIF registry page was not answered and, consequently, the URLs of registry pages that should have followed were not discovered. Similar events happened for both the GBIF and DataONE observatories at later points in time, potentially overestimating the reliability of the data network.
 
-In an effort to minimize artificial link rot due to internet access issues in our local network, we deployed the Preston observatories in a large commercial data center in Germany.
 
 
 

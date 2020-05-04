@@ -63,14 +63,14 @@ While previous studies focus more generally on reference rot of URLs cited in sc
 \subsection*{URL Reliability}
 We assume that the URLs used to reference biodiversity datasets are expected to resolve to an Internet Protocol (IP) \citep{rfc791} address via the Domain Name System \citep{rfc1034}. If a web server is accessible at the resolved IP address, a query (i.e., HTTP get request) to that address over the Hypertext Transfer Protocol (HTTP) will return a response code and, in some cases, associated content \citep{rfc3986}. We classify the reliability of a URL according to the content, or lack of content, that it provides over successive queries. If a query to a URL is unsuccessful, we say that link rot has occurred. However, if a successful response is received but the retrieved content is different from the content retrieved by previous query, we say that content drift has occurred. Monitoring URLs in this way allows us not only to determine whether link rot and content drift occur, but also to capture their long-term behaviors. For example, one URL that has exhibited link rot might have failed to respond only once, whereas another might have become consistently unresponsive. Likewise, one URL might exhibit content drift less frequently than another whose contents change rapidly. Furthermore, various combinations of link rot and content drift behavior may indicate that one URL is more reliable than another, even though both exhibit reference rot.
 
-We label URLs with sets of reliability indicators according to their link rot and content drift behaviors. The defined reliability indicators are differentiated by the degree of link rot and content drift observed over a series of queries to the URL at different points in time. We characterize the responsiveness of a URL according to how often it exhibits link rot:
+We label URLs with sets of reliability indicators according to their link rot and content drift behaviors. The defined reliability indicators are differentiated by the degree of link rot and content drift observed over a series of queries to the URL at different points in time. We characterize the responsiveness of a URL according to whether it exhibits link rot:
 
 \begin{itemize}
  \item Unresponsive: the link has failed to respond to one or more queries
  \item Responsive: the link has responded to all recorded queries
 \end{itemize}
 
-We characterize the stability of a URL according to how often it produces different content from one query to the next:
+We characterize the stability of a URL according to whether it produces different content from one query to the next:
 
 \begin{itemize}
  \item Unstable: the content that the link points to sometimes changes

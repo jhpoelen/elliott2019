@@ -234,12 +234,11 @@ We have shown that software agents such as Preston can be used to collect datase
 These four requirements help to ensure that biodiversity data remain FAIR (Findable, Accessible, Interoperable, and Reusable) \citep{Wilkinson_2016}. Findability is achieved through the publishing of provenance logs that thoroughly describe what datasets are and where they were retrieved. The amenability of the content-based identification paradigm to the operation of independent decentralized repositories strengthens accessibility by preventing the failure of a single data repository from inhibiting future data access (see figure \ref{fig:verification}). Content-based identification also contributes to interoperability across data networks due to the absence of any central authority to administrate data access; a content hash computed from a dataset is guaranteed to match the hash computed by any other agent using the same dataset. Furthermore, content-based identifiers can be embedded in or referenced by DOIs to maintain compatibility with systems that use DOIs as identifiers. Finally, and particularly relevant to this paper's purpose, reusability is strengthened by enhancing the retrievability of referenced datasets and allowing users to verify that a retrieved dataset exactly matches that which was referenced.
 
 \subsection*{Future Work}
-% TODO: Version links inside datasets
-% Jorrit: Preston uses embedded URLs in data network registries to discover the registered datasets. The same can be done with embedded reference in DwC-A.
-% Fortes: For datasets that contain links to other data, a recursive approach could be considered where those links are themselves based on content and tracked through provenance logs. This is the subject of future work (and beyond the scope of this paper).
-% Jorrit: benefit of decoupling content from their location and provenance.
+The seven-month span of our experimental results might not be considered long-term in the context of biodiversity data networks. To evaluate the long-term reliability of URLs in the selected data networks, continued monitoring is needed.
 
-% to see the long-term reliability of urls in the selected data networks, continued monitoring is needed.
+In this study, we only monitored the URLs that locate datasets. However, datasets may internally contain references to other data, such as media, literature, and genetic sequence information \citep{Wieczorek_2012}. Such references are often URLs and therefore potentially unreliable. For datasets that contain links to other data, a recursive approach could be considered where those links are themselves queried for content and tracked through provenance records. This is the subject of future work and beyond the scope of this paper.
+
+
 
 
 \section*{Conclusions}

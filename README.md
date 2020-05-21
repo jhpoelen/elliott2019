@@ -23,3 +23,9 @@ Colored figures were converted to grayscale using ImageMagick, e.g.
 ```
 convert -colorspace gray figures/fig5.png figures/fig5_grayscale.png
 ```
+
+When reviewing a new draft of the paper, it may be helpful to use [latexdiff](https://ctan.org/pkg/latexdiff) to compile a PDF with marked changes:
+```
+latexdiff -t CTRADITIONAL old-main.tex new-main.tex > diff-main.tex
+latexmk -pdf -jobname=Elliott2019-diff diff-main.tex
+```

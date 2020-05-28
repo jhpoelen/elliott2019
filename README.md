@@ -16,6 +16,7 @@ apt-get install latexmk
 ```
 - Compilation:
 ```shell
+latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -outdir=./tmpz/ main.tex
 latexmk -pdf -jobname=Elliott2019 main.tex
 ```
 

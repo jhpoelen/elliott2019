@@ -1,5 +1,3 @@
-See https://www.elsevier.com/authors/journal-authors/highlights -
-
 1. Location-based identifiers such as URLs and DOIs do not reliably reference digital biodiversity datasets.
 2. Between 20%-75% of digital biodiversity datasets in major biodiversity data networks GBIF, iDigBio, DataONE, and BHL changed or were unavailable in period March 2019- May 2020.
 3. Cryptographic content-based identifiers provide a reliable method to reference biodiversity datasets.

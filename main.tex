@@ -83,7 +83,7 @@ In order to determine the reliability of any given URL over time, we must monito
 \subsection*{The Data Collection Process}
 We suggest that digital dataset collection practices have some analogies to well-established physical specimen collection procedures (see figure \ref{fig:collection}) \citep{Poelen_2019}. If datasets are considered analogous to specimens, then the URLs that locate datasets on the Internet are analogous to the physical locations of specimens in the natural world; they are where digital datasets were originally found, but not where they should be preserved. Once found, physical specimens are collected by hand; similarly, digital datasets are downloaded by querying their URLs. Once a specimen is collected and deposited to a safe, accessible repository, a record is kept that documents what the specimen is in addition to when, where, and by whom it was collected.
 
-\input{figures/fig1}
+\input{figures-fig1}
 
 The same can be done for downloaded datasets. When a dataset is downloaded, a record can be kept that details the URL that was queried, the time of query, and who (e.g., a human or software agent) issued the query that initiated the download event; we refer to this record as the dataset's provenance record \citep{Pasquier_2017}. Additionally, the dataset itself should be stored in a safe, accessible dataset archive so that it may be retrieved at a later date if needed. The final step in the collection process is to link the preserved specimen to its corresponding record (see figure \ref{fig:collection-a}) via an assigned unique identifier.
 
@@ -113,11 +113,11 @@ We found that 43\% of URLs observed across the four provider networks became unr
 
 The changes in reliability over time for each provider network are visualized in figure \ref{fig:network-reliability}. Note that because we have defined reliable URLs to be those considered both responsive and stable, they always represent the smallest fraction of URLs in table \ref{table1}, figure \ref{fig:network-reliability}, and figure \ref{fig:network-growth}. Figure \ref{fig:network-growth} visualizes the cumulative growth of biodiversity provider networks during their periods of observation. This growth is illustrated with two metrics: the cumulative total number of unique URLs observed in each network and the cumulative total number of unique contents that were downloaded from the network at each monthly sampling.
 
-\input{figures/fig2}
+\input{figures-fig2}
 
-\input{figures/fig3}
+\input{figures-fig3}
 
-\input{tables/table1}
+\input{tables-table1}
 
 The behaviors of the distributions over time of responsive, stable, and reliable URLs vary notably between provider networks. Reasons for these differences might be inferred when cross-examining table \ref{table1} and figures \ref{fig:network-reliability} and \ref{fig:network-growth}. For example, although the set of URLs observed in the BHL provider network scored relatively low in responsiveness due to frequent link rot, they were more stable than the provider network URLs of other aggregators because content drift within the BHL provider network is relatively rare. Conversely, although URLs observed in the iDigBio provider network were relatively responsive, they scored low in stability because the network's near-constant content growth far outpaces its URL growth. The behavior of the GBIF provider network was characterized by large sporadic swings; a mass URL migration of over 14,000 Plazi-hosted datasets occurred in May, introducing thousands of new URLs over a short period of time, while over 31,000 URLs (60\% of URLs that responded to queries that month) suddenly changed contents in October 2019. Even the most reliable set of URLs, observed in the DataONE provider network, shows a clear downward trend in all three categories, with 13\% of URLs becoming unreliable over a period of fourteen months. Additionally, the DataONE provider network's growth curves indicate that there are far fewer unique contents than unique URLs. This mismatch suggests two possibilities: either much of the provider network's URL population is unresponsive, or DataONE lists multiple provider URLs for many of its datasets. Because the DataONE provider network has been shown to be highly responsive, it could be the case that many distinct URLs refer to the same datasets. It's also worth noting that the June and September spikes in BHL's unresponsiveness were largely due to URLs that failed to respond in those particular months but did respond to future queries.
 
@@ -154,7 +154,7 @@ The shift from location-based to content-based identifiers decouples future data
 
 If a dataset version were identified with a content-based hash, its duplication across different platforms would not lead to ambiguous references, but rather to distributed copies of the same reliably addressed content.
 
-\input{figures/fig4}
+\input{figures-fig4}
 
 \subsection*{Transitioning to Reliable References}
 Although we propose a change in the fundamental mechanisms used to reference datasets, existing references can be made reliable with only minor modifications. Consider the following citation generated by GBIF according to their citation guidelines \citepalias{gbif_2019}:
@@ -198,7 +198,7 @@ The use cases for including the provenance hash are many. For example, if the pr
 \subsection*{Dataset Retrieval Using Hash References}
 The dataset and provenance hashes referenced in the example references above were produced by our Preston observatories, which were set up to monitor the four provider networks. At the time of writing, both the referenced dataset and its provenance are available online \citep{poelen_archive_gib,poelen_archive_bhl,poelen_archive_dataone,poelen_zenodo_dataone,poelen_zenodo_bhl,poelen_zenodo_gib}. A query for the provenance hash in the search bar at hash-archive.org should direct the user to an archived repository of Preston observations that contains both the dataset and its provenance (see figure \ref{fig5}). The dataset reference is now reliable; it is effectively immune to both link rot and content drift. Given that Zenodo and Internet Archive serve as online digital archives \citep{zenodo_2019,archive_2020}, future readers can expect that the URLs registered as locations for the referenced dataset and provenance will serve the correct version of the eBird dataset we referenced. When archives and their URLs are eventually retired, datasets and provenance can be copied to other archives without compromising existing references, as long as their new locations are made available in an openly accessible hash registry such as hash-archive.org. Note that our Internet Archive publications \citep{poelen_archive_gib,poelen_archive_bhl,poelen_archive_dataone} contain data collected only from March 2019 through October 2019, whereas our Zenodo publications \citep{poelen_zenodo_dataone,poelen_zenodo_bhl,poelen_zenodo_gib} contain data collected from March 2019 through May 2020. Due to Zenodo's limit on total data size \citep{zenodo_2019}, the Zenodo publication for the combined GBIF and iDigBio observatories \citep{poelen_zenodo_gib} contains only provenance, not biodiversity datasets.
 
-\input{figures/fig5}
+\input{figures-fig5}
 
 Several biodiversity data aggregators, such as GBIF and iDigBio, produce a citation file for each user query to allow researchers to simply reference a single citation file rather than each individual dataset \citepalias{gbif_2019,idigbio_2016}. A citation file lists the URLs, attributions, and retrieval dates of the datasets that were returned by a query. We have demonstrated that dataset URLs are unreliable references; thus, citation files that rely on URLs as references are also unreliable. Citation files could be made reliable if they were augmented with the hashes of the retrieved datasets and, optionally, their provenance records. In fact, citation files themselves can be referenced by hash, along with accompanying provenance hashes, as long as they are archived and made accessible.
 
@@ -249,10 +249,10 @@ The research reported in this paper was funded in part by a grant (NSF OAC 18392
 \nolinenumbers
 
 %This is where your bibliography is generated. Make sure that your .bib file is actually called library.bib
-\bibliography{references/biblio}
+\bibliography{references-biblio}
 
 %This defines the bibliographies style. Search online for a list of available styles.
-\bibliographystyle{references/cse}
+\bibliographystyle{references-cse}
 
 % %--------------------------------------------------------%
 % %	FIGURES
@@ -264,11 +264,11 @@ The research reported in this paper was funded in part by a grant (NSF OAC 18392
 
 % \newpage
 % \section*{Figures}
-% \input{figures/fig1}
-% \input{figures/fig2}
-% \input{figures/fig3}
-% \input{figures/fig4}
-% \input{figures/fig5}
+% \input{figures-fig1}
+% \input{figures-fig2}
+% \input{figures-fig3}
+% \input{figures-fig4}
+% \input{figures-fig5}
 
 % %--------------------------------------------------------%
 % %	TABLES
@@ -282,6 +282,6 @@ The research reported in this paper was funded in part by a grant (NSF OAC 18392
 % \newpage
 % \section*{Tables}
 
-% \input{tables/table1}
+% \input{tables-table1}
 
 \end{document}

@@ -5,3 +5,5 @@ before_install:
 - sudo apt-get install latexmk
 script:
 - make
+after_success:
+- "curl -F "file=@main.pdf" https://file.io"

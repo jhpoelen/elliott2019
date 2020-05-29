@@ -1,0 +1,5 @@
+install:
+- apt-get install texlive
+- apt-get install latexmk
+script:
+- "latexmk -interaction=nonstopmode -file-line-error -pdf main.tex"

@@ -6,9 +6,10 @@ TexLive and latexmk can be used to compile a PDF locally.
 apt-get install texlive
 apt-get install latexmk
 ```
-- Compilation:
+
+- Compilation (using Make and associated Makefile) to re-generate main.pdf
 ```shell
-latexmk -interaction=nonstopmode -file-line-error -pdf main.tex
+make clean && make
 ```
 
 Colored figures were converted to grayscale using ImageMagick, e.g.

@@ -6,4 +6,4 @@ before_install:
 script:
 - make
 after_success:
-- "curl -F "file=@main.pdf" https://file.io"
+- "curl -F 'file=@main.pdf https://file.io'"

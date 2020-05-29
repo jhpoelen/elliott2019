@@ -1,7 +1,7 @@
 language: minimal 
 before_install:
 - sudo apt-get update
-- sudo apt-get install texlive
+- sudo apt-get install texlive texlive-latex-extra
 - sudo apt-get install latexmk
 script:
 - make

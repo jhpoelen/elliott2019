@@ -3,7 +3,7 @@
 TexLive and latexmk can be used to compile a PDF locally.
 - Installation:
 ```shell
-apt-get install texlive
+apt-get install texlive texlive-latex-extra
 apt-get install latexmk
 ```
 
